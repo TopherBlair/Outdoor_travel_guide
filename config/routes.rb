@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+
+
+  
+  get 'static_pages/home'
+
+  get 'static_pages/help'
+
   resources :attractions
   devise_for :users
-  root to: "home#index"
+  root 'attractions#index'
 
-
-root 'attractions#index'
 
 end
 
