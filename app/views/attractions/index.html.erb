@@ -1,2 +1,11 @@
-<h1>Attractions#index</h1>
-<p>Find me in app/views/attractions/index.html.erb</p>
+<h1>Attractions</h1>
+
+<% @attraction.each do |bill| %>
+ <h1><%= attraction.title %></h1>
+ <h2><%= attraction.category %></h2>
+  <p><%= attraction.url %></p>
+
+<%= link to 'Attraction', attraction_path(attraction) %>
+<% end %>
+
+<%= link_to 'New Attraction', new_attraction_path %>
