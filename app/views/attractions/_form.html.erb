@@ -1,0 +1,22 @@
+<%= form_for(@attraction) do |f| %>
+
+<div>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</div>
+
+<div>
+  <%= f.label :attraction %>
+  <%= f.text_area :attraction %>
+</div>
+
+<div>
+  <%= f.label :url %>
+  <%= f.text_area :url %>
+</div>
+
+<div>
+  <%= f.submit %>
+</div>
+
+<% end %>
