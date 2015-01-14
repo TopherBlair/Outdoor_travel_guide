@@ -3,6 +3,8 @@
 	<h2><%= review.name %></h2>
 	<h2><%= review.rating %></h2>
 	<p><%= review.body %></p>
-	<%= link_to 'Show review', review_path(review.id) %>
 	<p><%= link_to 'New Review', new_review_path %></p>
+	<%= link_to 'Show review', review_path(review.id) %>
+	<%= link_to 'Edit review', edit_review_path(review.id) %>
+	<%= link_to 'Destroy Review', review, method: :delete %>
 <% end %>
