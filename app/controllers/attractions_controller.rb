@@ -45,7 +45,7 @@ class AttractionsController < ApplicationController
   end
 
   def attraction_params
-    params.require(:attraction).permit(:title, :category, :url)
+    params.require(:attraction).permit(:title, :category, :url, :photo)
   end
 
 end
