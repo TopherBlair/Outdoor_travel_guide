@@ -1,15 +1,20 @@
 <header class="navbar  navbar-inverse">
   <div class="container page-top">
     <nav>
-    <%= link_to 'Home', root_path, class: "navbar-brand"  %>
+    <%= image_tag "bike.png", class: "navbar-brand logo" %>
+    <%= link_to 'Outdoor Travel Guide', root_path, class: "navbar-brand"  %>
       <ul class="nav navbar-nav pull-right">
+         <%= link_to 'Home', root_path, class: "navbar-text"  %>
+         <%= link_to 'Help', help_path, class: "navbar-text" %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle nav-text" data-toggle="dropdown" role="button" aria-expanded="false">
+           
             <% if current_user %>
               <%= current_user.email %>
             <% else %>
               Account
             <% end %>
+
             <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <% if current_user %>
