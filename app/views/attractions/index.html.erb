@@ -3,6 +3,7 @@
  <% @attractions.each do |attraction| %>
   <div class="panel-heading">
    <h1 class="panel-title"><%= attraction.title %></h1>
+   <%= link_to 'New Attraction', new_attraction_path, align: "right" %>
   </div>
    <h2><%= attraction.category %></h2>
    <p><%= attraction.url %></p>
@@ -13,4 +14,3 @@
 <%= link_to 'Destroy', attraction, class: "btn btn-warning", method: :delete, data: { confirm: 'Are you sure that you want to delete?' }%>
 <% end %>
 
-<%= link_to 'New Attraction', new_attraction_path %>
