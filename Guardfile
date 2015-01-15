@@ -32,7 +32,11 @@
 #  * zeus: 'zeus rspec' (requires the server to be started separately)
 #  * 'just' rspec: 'rspec'
 
+<<<<<<< HEAD
+guard :rspec, cmd: "bundle exec rspec" do
+=======
 guard :rspec, cmd: "spring rspec" do
+>>>>>>> aa9b77af8b551425c72dc7ddb73d7457c7dcc770
   require "guard/rspec/dsl"
   dsl = Guard::RSpec::Dsl.new(self)
 

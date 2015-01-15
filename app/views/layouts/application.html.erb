@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>OutdoorTravelGuide</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+	  <title> Outdoor Travel Guide (unofficial)</title>
+	  <link rel="stylesheet" type="text/css" href="../reviews.css.scss">
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
 
 <%= render "layouts/navbar" %>
 <% if notice %>
