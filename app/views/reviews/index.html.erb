@@ -1,10 +1,14 @@
-<h1> Reviews </h1>
+<body class="review"></body>
+<h1> REVIEWS </h1>
 <%= @reviews.each do |review| %>
 	<h2><%= review.name %></h2>
 	<h2><%= review.rating %></h2>
 	<p><%= review.body %></p>
 	<p><%= link_to 'New Review', new_review_path %></p>
-	<%= link_to 'Show review', review_path(review.id) %>
-	<%= link_to 'Edit review', edit_review_path(review.id) %>
-	<%= link_to 'Destroy Review', review, method: :delete %>
+	<p><%= link_to 'Show Review', review_path(review.id) %></p>
+	<p><%= link_to 'Edit Review', edit_review_path(review.id) %></p>
+	<p><%= link_to 'Delete Review', review, method: :delete %></p>
+	
+	
+	
 <% end %>
