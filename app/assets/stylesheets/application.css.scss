@@ -13,7 +13,31 @@
  *= require_tree .
  *= require_self
  */
+$navbar_height: 100px;
 
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.main-body {
+	padding-top: 100px;
+}
+
+.navbar {
+    background-color: #23438f;
+    font-family: sans-serif, arial;
+}
+
+.navbar-brand {
+	font-size: 2em;
+	font-family: sans-serif, arial;
+	font-weight: bold;
+	font-variant: small-caps;
+}
+
+.logo {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 20px;
+}

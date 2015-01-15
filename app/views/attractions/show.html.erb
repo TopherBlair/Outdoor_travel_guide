@@ -1,6 +1,7 @@
 <h1><%= @attraction.title %></h1>
 <h2><%= @attraction.category %></h2>
 <p><%= @attraction.url %></p>
+<p><%= image_tag @attraction.photo.url %></p>
 
 <%= link_to 'Back', attractions_path %>
 <%= link_to 'Edit Attraction', edit_attraction_path(@attraction) %>
