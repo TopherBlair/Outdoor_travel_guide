@@ -1,22 +1,21 @@
-<%= form_for (@attraction) do |f| %>
+<%= form_for (@attraction), :url => attractions_path, :html => { :multipart => true} do |f| %>
 
-<div>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-</div>
+  <ol class="formList">
+    <li>
+     <%= f.label :title %>
+     <%= f.text_field :title %>
+    </li>
+    <li>
+     <%= f.label :category %>
+     <%= f.text_field :category %>
+     </li>
+    <li>
+     <%= f.label :photo %>
+     <%= f.file_field :photo %>
+    </li>
 
-<div>
-  <%= f.label :category %>
-  <%= f.text_area :category %>
-</div>
-
-<div>
-  <%= f.label :url %>
-  <%= f.text_area :url %>
-</div>
-
-<div>
-  <%= f.submit %>
-</div>
-
+    <li>
+     <%= f.submit %>
+    </li>
+  </ol>
 <% end %>
