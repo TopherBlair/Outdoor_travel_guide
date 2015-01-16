@@ -31,8 +31,11 @@ $navbar_height: 100px;
 }
 
 .navbar {
-    background-color: #23438f;
+    // background-color: #23438f;
+    background-image: url(http://outdoorgearmadness.com/wp-content/uploads/2012/05/Trail-Running-Wallpaper-1280-x-800.jpg);
+    background-repeat: repeat-x;
     font-family: sans-serif, arial;
+    max-width: 100%;
 }
 
 .navbar-brand {
