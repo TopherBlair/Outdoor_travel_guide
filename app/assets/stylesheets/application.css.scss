@@ -19,6 +19,12 @@ $navbar_height: 100px;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.carosel_image {
+
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+}
 
 .main-body {
 	padding-top: 100px;
