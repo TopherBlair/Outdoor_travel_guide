@@ -15,3 +15,9 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+
+$(".menu-item-1 a").click(function() {
+	console.log("hey");
+  alert( "Handler for .click() called." );
+});
