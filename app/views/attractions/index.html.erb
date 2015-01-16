@@ -1,9 +1,9 @@
 <h1>Attractions</h1>
+<%= link_to 'New Attraction', new_attraction_path, class: "btn btn-primary" %>
 <div class="panel panel-default">
  <% @attractions.each do |attraction| %>
   <div class="panel-heading">
    <h1 class="panel-title"><%= attraction.title %></h1>
-   <%= link_to 'New Attraction', new_attraction_path, align: "right" %>
   </div>
    <h2><%= attraction.category %></h2>
    <p><%= attraction.url %></p>
