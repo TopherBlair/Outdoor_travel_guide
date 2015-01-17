@@ -46,9 +46,7 @@ $navbar_height: 100px;
 	margin-left: 830px;
 	margin-top: 20px;
 	width: 50%;
-	h1 {
-		width: 50px;
-	}
+	
 }
 
 .btn-sm {
@@ -106,8 +104,15 @@ a {
 	font-variant: small-caps;
 }
 
+.navbar-text {
+	color: #000;
+    text-transform: uppercase;
+}
+
 .logo {
 	padding-top: 5px;
 	padding-bottom: 5px;
 	padding-left: 20px;
 }
+
+

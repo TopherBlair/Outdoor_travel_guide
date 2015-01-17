@@ -5,18 +5,18 @@
     <%= link_to 'Outdoor Travel Guide', root_path, class: "navbar-brand collapsed" %>
       <ul class="nav navbar-nav pull-right">
          <%= link_to 'Home', root_path, class: "navbar-text collapsed"  %>
-         <%= link_to 'Help', help_path, class: "navbar-text collapsed" %>
+         <%= link_to 'Contact', help_path, class: "navbar-text collapsed" %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle nav-text" data-toggle="dropdown" role="button" aria-expanded="false">
            
             <% if current_user %>
               <%= current_user.email %>
             <% else %>
-              Account
+              Member
             <% end %>
 
-            <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
+            <span class="caret collapsed"></span></a>
+          <ul class="dropdown-menu collapsed" role="menu">
             <% if current_user %>
               <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
               <li><%= link_to 'Edit Account', edit_user_registration_path %></li>
