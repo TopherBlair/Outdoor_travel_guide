@@ -1,0 +1,31 @@
+module Apis
+  module TrailsApi
+  	include HTTParty # https://github.com/jnunemaker/httparty
+
+  	TRAILS_API_URL = 'https://trailapi-trailapi.p.mashape.com/'
+
+  	# See https://www.mashape.com/trailapi/trailapi
+  	# Options should have some of these parameters
+  	# options = {
+  	# 	q: {
+  	# 			activities_activity_name_cont: '',
+  	# 			activities_activity_type_name_eq: '',
+  	# 			city_cont: '', # 
+  	# 			state_cont: '',
+  	# 			country_cont: ''
+  	# 		},
+  	# 	radius: 25 # In miles
+  	# }
+  	def self.get_trails_data(city_cont, activities_activity_type_name_eq, options={})
+  		options['radius'] = 25 unless options.has_key? 'radius' # Default 25 miles unless otherwise specified
+  		options['q'] = {'city_cont' => nil}
+  		options['q']['city_cont'] = city_cont
+  		options['q']['activities_activity_type_name_eq'] = activities_activity_type_name_eq
+  		self.headers 'X-Mashape-Key' => ENV['TRAILS_API_KEY'], 
+  					 'Accept' => 'text/plain'
+		puts options
+  		self.get(TRAILS_API_URL, :query => options)
+  	end
+
+  end
+end
