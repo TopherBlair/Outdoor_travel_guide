@@ -5,6 +5,14 @@ class AttractionsController < ApplicationController
   def show
   end
 
+  def api_index
+    @api_results = Apis::TrailsApi.get_trails_data(params['city_location'], params['activty_type'])
+  end
+
+  # def api_results
+  #   @api_results = Apis::TrailsApi.get_trails_data(params['city_location'], params['activty_type'])
+  # end
+
   def index
     @attractions = Attraction.all
   end
@@ -18,7 +26,7 @@ class AttractionsController < ApplicationController
     if @attraction.save
       redirect_to @attraction
     else
-      render :new
+      render :new 
     end
   end
 

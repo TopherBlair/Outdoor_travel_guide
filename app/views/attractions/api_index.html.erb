@@ -1,0 +1,9 @@
+<h1>Attractions</h1>
+
+<%= @api_results['places'].each do |place| %>
+
+<%= place['city'] %>
+
+<%= place['activities'].map {|activity| activity['description'] } %>
+
+<% end %>
