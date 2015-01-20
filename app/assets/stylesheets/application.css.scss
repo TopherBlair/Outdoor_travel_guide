@@ -43,8 +43,8 @@ $navbar_height: 100px;
 }
 
 .row {
-	margin-left: 830px;
-	margin-top: 20px;
+	margin-left: 950px;
+	margin-top: 40px;
 	width: 50%;
 	
 }
@@ -54,9 +54,36 @@ $navbar_height: 100px;
 	margin-left: -80px;
 }
 
+h1 {
+	margin-left: 290px;
+}
+
+h3 {
+    font-family: chalkduster, arial, sans-serif;
+}
+
+.col-md-3 {
+    margin-top: 100px;
+    margin-left: -212px;
+}
 
 .panel {
+	display: block;
+	margin-left: 30px;
+	width:540px;
+    height: auto;
 	background: rgba(0, 0, 0, 0.2);
+	font-variant: none;
+	h1 {
+		background: transparent;
+	}
+	h2 {
+		color: white;
+	}
+	.footer {
+		text-align: right;
+	}
+
 }
 
 
@@ -71,6 +98,7 @@ $navbar_height: 100px;
     max-width: 100%;
     top: 0px;
     border: 0px;
+
 }
 
 .row {
@@ -83,6 +111,7 @@ body {
 	background: url("http://outdoorgearmadness.com/wp-content/uploads/2012/05/Trail-Running-Wallpaper-1280-x-800.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
+
 
 }
 
@@ -98,8 +127,8 @@ a {
 }
 
 .navbar-brand {
-	font-size: 4em;
-	font-family: Gotham Nights, sans-serif, arial;
+	font-size: 2.5em;
+	font-family: chalkduster, Gotham Nights, sans-serif, arial;
 	font-weight: bold;
 	font-variant: small-caps;
 }
@@ -115,4 +144,6 @@ a {
 	padding-left: 20px;
 }
 
-
+.navbar-nav {
+	color: #fff;
+}
