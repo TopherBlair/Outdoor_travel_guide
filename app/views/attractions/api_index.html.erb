@@ -1,9 +1,22 @@
 <h1>Attractions</h1>
 
-<%= @api_results['places'].each do |place| %>
+<% @api_results['places'].each do |place| %>
 
-<%= place['city'] %>
+  <ol><%= place['city'] %>
 
-<%= place['activities'].map {|activity| activity['description'] } %>
+    <h4>Name<h4>
+      <%= place['name'] %>
+
+    <h4>Directions<h4>
+      <%= place['directions'] %>
+
+    <% place['activities'].each do |activity| %>
+
+    <h4>Description<h4>
+      <%= activity['description'] %>
+
+    <% end %>
+     
+  </ol>
 
 <% end %>
