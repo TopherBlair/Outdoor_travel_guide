@@ -103,30 +103,20 @@
   
       <div class="col-md-4 btn-group"><h3>Attraction</h3>
 
+        <%= form_tag attractions_search_path do |f| %>
+        <%= select_tag "Attraction", options_for_select(["camping","mountain biking","hiking"]), class: "form-control", name: 'activty_type' %>
 
-      <%= select_tag "Attraction", options_for_select(["Mountain Bike Trails","Hiking Trails","Lakes and Rivers","Campgrounds"]), class: "btn btn-default btn-lg" %>
       </div>
 
-      <div class="col-md-3"><h3>Destination</h3>
-      	<!-- <input type="text" class="form-control" placeholder="Your destination"> -->
-        <input type="text" id="location-input" style='width:200px;' class="form-control" placeholder="search"/> <br>
-        <input type='button' class="search" class='location-search' value="Find" />
-
-
-      <%= form_tag attractions_search_path do |f| %>
-      <%= select_tag "Attraction", options_for_select(["camping", "Mountain Bike Trails","Hiking Trails","Lakes and Rivers","Campgrounds"]), class: "form-control", name: 'activty_type' %>
-      </div>
-
-      <div class="col-md-4"><h2>Choose Your Destination</h2>
-      	<input type="text" class="form-control" name='city_location' placeholder="Type your destination"></div>
-
-      <div class="col-md-4">
-      
+       <div class="col-md-3"><h3>Destination</h3>
+      	
+        <input type="text" class="form-control" name='city_location' style='width:200px;' placeholder="Type your destination"></div>
+     
         <%= submit_tag 'Go!', class: "btn btn-primary btn-lg" %>
 
-      </div>
+       </div>
+ 
       <% end %>
-
 
   </div>
 
