@@ -1,6 +1,6 @@
-<h1>Attractions</h1>
-<%= link_to 'New Attraction', new_attraction_path, class: "btn btn-primary" %>
-<div class="panel panel-default">
+<h1>Attractions <span class="label"><%= link_to 'New', new_attraction_path, class: "btn btn-default btn-lg" %></h1>
+
+<div class="panel panel-info">
  <% @attractions.each do |attraction| %>
   <div class="panel-heading">
    <h1 class="panel-title"><%= attraction.title %></h1>
@@ -8,9 +8,13 @@
    <h2><%= attraction.category %></h2>
    <p><%= attraction.url %></p>
   <div class="panel-body">
-   <p><%= image_tag attraction.photo.url %></p>
+   <p><%= image_tag attraction.photo.url, size: "300x200" %></p>
   </div>
+
+  <div class="footer">
 <%= link_to 'Edit', edit_attraction_path(attraction), class: "btn btn-default" %>
 <%= link_to 'Destroy', attraction, class: "btn btn-warning", method: :delete, data: { confirm: 'Are you sure that you want to delete?' }%>
+  </div>
 <% end %>
 
+</div>

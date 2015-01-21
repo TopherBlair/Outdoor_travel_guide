@@ -1,8 +1,12 @@
+<div class="panel">
+
 <h1><%= @attraction.title %></h1>
 <h2><%= @attraction.category %></h2>
 <p><%= @attraction.url %></p>
 <p><%= image_tag @attraction.photo.url %></p>
 
-<%= link_to 'Back', attractions_path %>
+<%= link_to 'Home', attractions_path %>
 <%= link_to 'Edit Attraction', edit_attraction_path(@attraction) %>
 <%= link_to 'Delete', @attraction, method: :delete, data: { confirm: 'Are you sure that you want to delete?' }%>
+
+</div>

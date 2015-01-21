@@ -1,23 +1,90 @@
 <div class="jumbotron">
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
-    <ol class="carousel-indicators">
+    <!-- <ol class="carousel-indicators">
       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
       <li data-target="#carousel-example-generic" data-slide-to="1"></li>
       <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    </ol>
+    </ol> -->
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <%= image_tag 'images.jpeg', class: "img img-responsive carosel_image" %>
+      <%= image_tag '0svbd.jpg', class: "img img-responsive carosel_image" %>
     </div>
     <div class="item">
-      <%= image_tag 'images (1).jpeg', class: "img img-responsive carosel_image" %>  
+      <%= image_tag '5-jpg.jpg', class: "img img-responsive carosel_image" %>  
     </div>
     <div class="item">
-      <%= image_tag 'images (2).jpeg', class: "img img-responsive carosel_image" %>  
+      <%= image_tag 'plitvice-lakes-croatia-national-park-wallpaper.jpg', class: "img img-responsive carosel_image" %>  
     </div>
+    <div class="item">
+      <%= image_tag '4370-tamborine-national-park-1920x1080-nature-wallpaper.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag '15181-waterfall-in-grand-teton-national-park-1920x1080-nature-wallpaper.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'Angels-Landing-Trail-in-Zion-National-Park-Utah.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'arches_national_park.jpeg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'arches-national-park.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'bg_01.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'Bow_Lake_and_Flowers_Banff_National_Park_Alberta_Canada_1.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'double-arch-in-arches-national-park.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'Glen-Canyon-National-Recreation-Area1.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'Glen-Canyon-Utah.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'grand-canyon-wallpaper-5.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'grinnell-glacier-national-park-1440x900.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'jasper3.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'national_park_usa_107.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'national-park-utah-landscapes-lightning-overcast-54027-1600x1200.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'nature-landscapes_hdwallpaper_elbow-river-falls-in-alberta_11085.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'shafer_trail___canyonlands_utah-wallpaper-1920x1200.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'Spring-Wallpaper-06.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'the-breathtaking-melissani-cave-in-greece-mic-23067.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'utah_national_park-wallpaper-1920x1200.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'zion_national_park_wallpaper_landscape_nature_wallpaper_1680_1050_widescreen_1010.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+    <div class="item">
+      <%= image_tag 'Zion-National-Park-Big-Bend-Utah-United-States-650x487.jpg', class: "img img-responsive carosel_image" %>  
+    </div>
+
   </div>
 
   <!-- Controls -->
@@ -30,12 +97,21 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-<p></P>
+</div>
 
- 
   <div class="row">
   
-      <div class="col-md-4"><h2>Choose Your Attraction</h2>
+      <div class="col-md-4 btn-group"><h3>Attraction</h3>
+
+
+      <%= select_tag "Attraction", options_for_select(["Mountain Bike Trails","Hiking Trails","Lakes and Rivers","Campgrounds"]), class: "btn btn-default btn-lg" %>
+      </div>
+
+      <div class="col-md-3"><h3>Destination</h3>
+      	<!-- <input type="text" class="form-control" placeholder="Your destination"> -->
+        <input type="text" id="location-input" style='width:200px;' class="form-control" placeholder="search"/> <br>
+        <input type='button' class="search" class='location-search' value="Find" />
+
 
       <%= form_tag attractions_search_path do |f| %>
       <%= select_tag "Attraction", options_for_select(["camping", "Mountain Bike Trails","Hiking Trails","Lakes and Rivers","Campgrounds"]), class: "form-control", name: 'activty_type' %>
@@ -45,14 +121,18 @@
       	<input type="text" class="form-control" name='city_location' placeholder="Type your destination"></div>
 
       <div class="col-md-4">
-      	<p></p>
-      	<p></p>
-      	<p></p>
+      
         <%= submit_tag 'Go!', class: "btn btn-primary btn-lg" %>
 
       </div>
       <% end %>
 
+
   </div>
-   
-</div>
+
+
+
+      
+
+
+

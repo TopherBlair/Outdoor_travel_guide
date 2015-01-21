@@ -1,5 +1,6 @@
-<%= form_for (@attraction), :url => attractions_path, :html => { :multipart => true} do |f| %>
+<%= form_for (@attraction), :html => attractions_path, :html => { :multipart => true} do |f| %>
 
+<div class="panel panel-info">
   <ol class="formList">
     <li>
      <%= f.label :title %>
@@ -18,4 +19,5 @@
      <%= f.submit %>
     </li>
   </ol>
+</div>
 <% end %>
