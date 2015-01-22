@@ -1,7 +1,5 @@
-<h1>Attractions </h1>
-
 <div class="panel panel-default">
-<% @api_results['places'].each do |place| %>
+<% @api_unique_id_results['places'].each do |place| %>
   <% place['activities'].each do |activity| %>
   
   <div class="panel-heading">
@@ -10,11 +8,11 @@
     <h5 class="panel-title"><%= place['city'] %></h5>
     <h5 class="panel-title"><%= activity['activity_type_name'] %></h5>
 
-  </div>
+    </div>
   
     <div class="panel-body">
     <h4>Name</h4>
-    <%= link_to place['name'], attraction_api_path(activities_unique_id: activity['unique_id']) %>
+      <%= place['name'] %>
 
     <h4>Directions</h4>
       <%= place['directions'] %>
@@ -24,6 +22,8 @@
       <%= activity['description'] %>
       <%= activity['unique_id'] %>
     </div>
+
+    <p><%= link_to 'New Review', new_review_path %></p>
 
   <% end %>
      
