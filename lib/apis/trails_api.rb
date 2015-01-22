@@ -27,5 +27,14 @@ module Apis
   		self.get(TRAILS_API_URL, :query => options)
   	end
 
+    def self.get_trails_data_id(unique_id, options={})
+      options['q'] = {'activities_unique_id_eq' => nil}
+      options['q']['activities_unique_id_eq'] = unique_id
+      self.headers 'X-Mashape-Key' => ENV['TRAILS_API_KEY'], 
+             'Accept' => 'text/plain'
+    puts options
+      self.get(TRAILS_API_URL, :query => options)
+    end
+
   end
 end
