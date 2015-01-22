@@ -78,6 +78,7 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.6)
     formatador (0.2.5)
+    gmaps4rails (2.1.2)
     guard (2.11.1)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -233,6 +234,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails
+  gmaps4rails
   guard-rspec
   httparty
   jbuilder (~> 2.0)
