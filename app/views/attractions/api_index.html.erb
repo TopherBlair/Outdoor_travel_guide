@@ -1,4 +1,4 @@
-<h1>Attractions </h1>
+<!-- <h1>Attractions </h1> -->
 
 <div class="panel panel-default">
 <% @api_results['places'].each do |place| %>
@@ -8,7 +8,7 @@
    <ol>
     
     <h5 class="panel-title"><%= place['city'] %></h5>
-    <h5 class="panel-title"><%= activity['activity_type_name'] %></h5>
+    <h4 class="panel-title"><%= activity['activity_type_name'] %></h4>
 
   </div>
   
@@ -31,3 +31,4 @@
 
 <% end %>
 </div>
+

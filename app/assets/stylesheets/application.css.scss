@@ -69,6 +69,7 @@ h3 {
 
 .panel {
 	display: block;
+	margin-top: 50px;
 	margin-left: 30px;
 	width:540px;
     height: auto;
@@ -147,10 +148,9 @@ a {
 	font-variant: small-caps;
 }
 
-.navbar-text {
-	color: #fff;
-    text-transform: uppercase;
-}
+// .navbar-text {
+//     text-transform: uppercase;
+// }
 
 .logo {
 	padding-top: 5px;
@@ -159,5 +159,16 @@ a {
 }
 
 .navbar-nav {
-	color: #fff;
+	a:visited {
+	    color: #000;
+    }
+    a:hover {
+    	color: #fff;
+    }
+    text-transform:  uppercase;
+
+}
+
+span {
+	color: white;
 }
