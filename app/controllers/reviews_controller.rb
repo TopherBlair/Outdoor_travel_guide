@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :new]
 	before_action :set_review, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -7,7 +7,6 @@ class ReviewsController < ApplicationController
   end
 
   def show
-  	@review = Review.find(params[:id])
   end
 
   def new
@@ -18,36 +17,32 @@ class ReviewsController < ApplicationController
   	@review = Review.new(review_params)
 
   	if @review.save
-  		redirect_to reviews_path
+  		redirect_to attraction_api_path(activities_unique_id: @review.unique_id)
   	else
   		render :new
   	end
   end
 
   def edit
-  	@review = Review.find(params[:id])
   end
   
   def update
-  	@review = Review.find(params[:id])
-
   	if @review.update_attributes(review_params)
-  		redirect_to reviews_path
+  		redirect_to attraction_api_path(activities_unique_id: @review.unique_id)
   	else
   		render :edit
   	end
   end
 
   def destroy
-  	@review = Review.find(params[:id])
   	@review.destroy
-  	redirect_to reviews_path
+  	redirect_to attraction_api_path(activities_unique_id: @review.unique_id)
   end
   
   private
 
   def review_params
-  	params.require(:review).permit(:name, :rating, :body)
+  	params.require(:review).permit(:name, :rating, :body, :unique_id)
   end
 
   def set_review
