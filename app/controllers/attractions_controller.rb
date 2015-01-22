@@ -5,6 +5,10 @@ class AttractionsController < ApplicationController
   def show
   end
 
+  def attractions_api
+    @api_unique_id_results = Apis::TrailsApi.get_trails_data_id(params['activities_unique_id'])
+  end
+
   def api_index
     @api_results = Apis::TrailsApi.get_trails_data(params['city_location'], params['activty_type'])
   end
