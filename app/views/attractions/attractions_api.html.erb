@@ -31,8 +31,13 @@
       <h2><%= review.name %></h2>
       <h2><%= review.rating %></h2>
       <p><%= review.body %></p>
-      <p><%= link_to 'Edit Review', edit_review_path(id: review, unique_id: activity['unique_id']) %></p>
-      <p><%= link_to 'Delete Review', review, method: :delete %></p>
+      
+      <% if current_user %>
+        <% if current_user.id == review.user_id || 0 %>
+          <p><%= link_to 'Edit Review', edit_review_path(id: review, unique_id: activity['unique_id']) %></p>
+          <p><%= link_to 'Delete Review', review, method: :delete %></p>
+        <% end %>
+      <% end %>
     <% end %>
 
   <% end %>
