@@ -1,0 +1,13 @@
+<h2><%= review.name %></h2><br>
+<%= review.rating.times do %>
+		<span class="glyphicon glyphicon-star"></span>
+	<% end %>
+<br>
+<p style="color:grey;"><%= review.body %></p>
+
+<% if current_user %>
+	<% if current_user.id == review.user_id || 0 %>
+	  <p><%= link_to 'Edit Review', edit_review_path(id: review, unique_id: activity['unique_id']) %></p>
+	  <p><%= link_to 'Delete Review', review, method: :delete %></p>
+	<% end %>
+<% end %>

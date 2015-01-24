@@ -13,5 +13,6 @@ root 'static_pages#home'
   resources :attractions
   resources :reviews
   devise_for :users, :controllers => {registrations: 'registrations' }
+  resources :users, only: [:show, :index]
 end
 

@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :new]
 	before_action :set_review, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :js
 
   def index
   	@reviews = Review.all
@@ -15,9 +16,14 @@ class ReviewsController < ApplicationController
 
   def create
   	@review = Review.new(review_params)
+    @unique_id = @review.unique_id
+    @review.user_id = current_user.id
 
   	if @review.save
-  		redirect_to attraction_api_path(activities_unique_id: @review.unique_id)
+      respond_to do |format|
+        format.html { redirect_to attraction_api_path(activities_unique_id: @review.unique_id) }
+        format.js
+      end
   	else
   		render :new
   	end
