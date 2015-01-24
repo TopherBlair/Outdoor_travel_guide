@@ -24,6 +24,11 @@
  
     </div>
 
+    <div class="footer">
+     <%= link_to 'Add To Trip', new_trip_path(@trip), class: "btn btn-default" %>
+    </div>
+
+
     <p><%= link_to 'New Review', new_review_path(unique_id: activity['unique_id']), id: 'new-review-ajax', remote: true  %></p>
 
    
@@ -45,7 +50,7 @@
 <% end %>
 </div>
 
-<div class='width: 400px'>
+<div class="row collapsed" style='width: 400px' data-toggle="collapsed">
  <div id="loc_map" style='height: 300px; width: 400;'>Map goes here</div> 
 </div> 
 
