@@ -13,7 +13,11 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require underscore
+//= require gmaps/google
 //= require_tree .
+
+
 
 
 $(".menu-item-1 a").click(function() {

@@ -15,10 +15,14 @@ class ReviewsController < ApplicationController
   end
 
   def create
+
   	@review = Review.new(review_params)
     @unique_id = @review.unique_id
     @review.user_id = current_user.id
 
+
+  	@review = current_user.reviews.new(review_params)
+   
   	if @review.save
       respond_to do |format|
         format.html { redirect_to attraction_api_path(activities_unique_id: @review.unique_id) }

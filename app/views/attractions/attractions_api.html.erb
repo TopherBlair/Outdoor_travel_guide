@@ -44,3 +44,28 @@
 
 <% end %>
 </div>
+
+<div class='width: 400px'>
+ <div id="loc_map" style='height: 300px; width: 400;'>Map goes here</div> 
+</div> 
+
+<script>
+var handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'loc_map'}}, function(){
+  var markers = handler.addMarkers([
+    {
+      "lat": 40.756939,
+      "lng": -111.883687,
+      "picture": {
+        "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+        "width":  36,
+        "height": 36
+      },
+      "infowindow": "You!"
+    }
+  ]);
+  handler.map.centerOn(markers[0]);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
+ </script>

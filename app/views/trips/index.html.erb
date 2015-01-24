@@ -1,0 +1,10 @@
+<h1> Trips </h1><p><%= link_to 'Add a New Trip', new_trip_path %></p>
+<% @trips.each do |trip| %>
+	<h2><%= trip.name %></h2>
+	<%= link_to 'Show trip', trip_path(trip.id) %>
+	<%= link_to 'Edit trip', edit_trip_path(trip.id) %>
+	<%= link_to 'Delete', trip, method: :delete %>
+
+<% end %>
+
+
