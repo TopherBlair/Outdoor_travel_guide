@@ -11,7 +11,7 @@ class AttractionsController < ApplicationController
   end
 
   def api_index
-    @api_results = Apis::TrailsApi.get_trails_data(params['city_location'], params['activty_type']) 
+    @api_results = Apis::TrailsApi.get_trails_data(params['city_location'], params['activty_type'])
   end
 
   def index
