@@ -12,6 +12,7 @@ root 'static_pages#home'
 
   resources :attractions
   resources :reviews
+  resources :trips # re route to users page. 
   devise_for :users, :controllers => {registrations: 'registrations' }
 end
 
