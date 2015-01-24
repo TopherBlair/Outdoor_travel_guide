@@ -14,8 +14,8 @@ class ReviewsController < ApplicationController
   end
 
   def create
-  	@review = Review.new(review_params)
-
+  	@review = current_user.reviews.new(review_params)
+   
   	if @review.save
   		redirect_to attraction_api_path(activities_unique_id: @review.unique_id)
   	else
