@@ -26,11 +26,12 @@
 
     <p><%= link_to 'New Review', new_review_path(unique_id: activity['unique_id']), id: 'new-review-ajax', remote: true  %></p>
 
+
     <h5 class="panel-footer"> REVIEWS </h5>
     <% @reviews.each do |review| %>
-      <h2><%= review.name %></h2>
-      <h2><%= review.rating %></h2>
-      <p><%= review.body %></p>
+      <h2><%= review.name %></h2><br>
+      <h2><i class='fa fa-star'></i><%= review.rating %></h2><br>
+      <p style="color:grey;"><%= review.body %></p>
       
       <% if current_user %>
         <% if current_user.id == review.user_id || 0 %>

@@ -36,5 +36,9 @@ module Apis
       self.get(TRAILS_API_URL, :query => options)
     end
 
+    def self.get_attractions_for_trip
+
+    end
+
   end
 end
