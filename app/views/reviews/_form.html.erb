@@ -1,20 +1,23 @@
 
-<%= form_for @review do |f| %>
-	<div class="panel panel-info" style="color:grey;">
-     <ol class="formList">
-     
-	  <%= f.label :name %>
-	  <%= f.text_field :name %>
-      <br>
-	  <%= f.label :rating %>
-	  <%= f.text_field :rating %>
-      <br>
-	  <%= f.label :body %>
-	  <%= f.text_field :body %>
-      <br>
-	  <%= f.hidden_field :unique_id, value: params[:unique_id] %>
-      <br>
-	  <%= f.submit %>
-	 </ol> 
-	</div>
+
+<%= form_for(@review, remote: using_modal) do |f| %>
+    <div class="panel panel-info" style="color:grey;">
+    <ol class="formlist">
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :rating %>
+	<%= f.text_field :rating %>
+
+	<%= f.label :body %>
+	<%= f.text_field :body %>
+
+	<%= f.hidden_field :unique_id, value: params[:unique_id] %>
+
+	<%= f.submit %>
+	<% if using_modal %>
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <% end %>
+    </ol> 
+    </div> 
 <% end %>
