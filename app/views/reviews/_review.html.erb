@@ -7,7 +7,7 @@
 
 <% if current_user %>
 	<% if current_user.id == review.user_id || 0 %>
-	  <p><%= link_to 'Edit Review', edit_review_path(id: review, unique_id: activity['unique_id']) %></p>
-	  <p><%= link_to 'Delete Review', review, method: :delete %></p>
+	  <p><%= link_to 'Edit Review', edit_review_path(id: review, unique_id: activity['unique_id']), class: "btn btn-default" %>
+	     <%= link_to 'Delete Review', review, method: :delete, class: "btn btn-warning" %></p>
 	<% end %>
 <% end %>
