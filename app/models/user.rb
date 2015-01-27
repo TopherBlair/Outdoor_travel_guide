@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 has_many :reviews
-has_many :attractions
+
+has_many :trips
 
 end

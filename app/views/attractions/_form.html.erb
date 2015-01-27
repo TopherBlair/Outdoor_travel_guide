@@ -1,23 +1,23 @@
-<%= form_for (@attraction), :html => attractions_path, :html => { :multipart => true} do |f| %>
+<%= form_for (@attraction) do |f| %>
 
 <div class="panel panel-info">
-  <ol class="formList">
-    <li>
-     <%= f.label :title %>
-     <%= f.text_field :title %>
-    </li>
-    <li>
-     <%= f.label :category %>
-     <%= f.text_field :category %>
-     </li>
+  <ul class="formList">
     <li>
      <%= f.label :photo %>
      <%= f.file_field :photo %>
     </li>
+    <li>
+      <%= f.label :name %>
+      <%= f.select :trip_id, options_from_collection_for_select(current_user.trips, :id, :name) %>
+    </li>
+    <li>
+      <%= f.hidden_field :unique_id, value: params[:unique_id] %>
+    </li>
+    
 
     <li>
-     <%= f.submit %>
+     <%= f.submit ("Add To Trip")%>
     </li>
-  </ol>
+  </ul>
 </div>
 <% end %>
