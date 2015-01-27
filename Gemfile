@@ -37,6 +37,9 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-rails'	
+  gem 'minitest-reporters'
+  gem 'mini_backtrace'
+  gem 'guard-minitest'
 end
 
 # Use ActiveModel has_secure_password
@@ -46,3 +49,4 @@ gem 'devise'
 
 gem 'gmaps4rails'
 gem 'underscore-rails'
+

@@ -9,7 +9,7 @@ class Attraction < ActiveRecord::Base
      def longtitude
      end
 
-    end
+    
 end
 
 

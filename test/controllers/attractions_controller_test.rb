@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class AttractionsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   test "should get show" do
     get :show, id: attractions(:one)
     assert_response :success
@@ -16,10 +18,10 @@ class AttractionsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  # test "should get create" do
-  #   get :create
-  #   assert_response :success
-  # end
+  test "should get create" do
+    get :create
+    assert_response :success
+  end
 
   test "should get edit" do
     get :edit, id: attractions(:one)
