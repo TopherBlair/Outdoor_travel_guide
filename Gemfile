@@ -28,6 +28,10 @@ gem 'paperclip'
 
 gem 'httparty'
 
+gem 'omniauth-instagram'
+gem 'instagram'
+gem 'sinatra'
+
 group :development, :test do
   gem 'dotenv-rails'
   gem 'spring-commands-rspec'  

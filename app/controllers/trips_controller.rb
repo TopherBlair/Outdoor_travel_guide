@@ -1,18 +1,27 @@
 class TripsController < ApplicationController
+
+before_action :authenticate_user!, only: [:edit, :update, :destroy, :new]
+before_action :set_users, only: [:new, :edit]
+
   def index
   	@trips = Trip.all
+	  	respond_to do |format|
+	  		format.html
+	  		format.csv { render text: @trips.to_csv }
+  	end 
   end
   
   def show
   	@trip = Trip.find(params[:id])
+    
   end
 
   def new
-  	@trip = Trip.new
+  	@trip = current_user.trips.build
   end
 
   def create
-  	@trip = Trip.new(trip_params)
+  	@trip = current_user.trips.build(trip_params)
 
   	if @trip.save
   		redirect_to trips_path
@@ -43,7 +52,11 @@ class TripsController < ApplicationController
 
   private
 
+  def set_users
+    @users = User.all
+  end
+
   def trip_params
-  	params.require(:trip).permit(:name)
+  	params.require(:trip).permit(:name, :user_id)
   end
 end
