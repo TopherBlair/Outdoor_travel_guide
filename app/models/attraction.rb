@@ -9,11 +9,10 @@ class Attraction < ActiveRecord::Base
 
      belongs_to :trip
 
-    
 
+    def longtitude
+    end
 
-  def longtitude
-  end
 
 end
 
