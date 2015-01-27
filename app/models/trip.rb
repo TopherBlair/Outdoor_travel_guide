@@ -9,4 +9,8 @@ class Trip < ActiveRecord::Base
 	# 		end
 	# 	end
 	# end
+
+has_many :attractions
+belongs_to :user
+
 end
