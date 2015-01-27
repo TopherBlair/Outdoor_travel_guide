@@ -1,6 +1,10 @@
 class TripsController < ApplicationController
   def index
   	@trips = Trip.all
+	  	respond_to do |format|
+	  		format.html
+	  		format.csv { render text: @trips.to_csv }
+  	end 
   end
   
   def show
