@@ -25,7 +25,10 @@
     </div>
 
     <div class="footer">
-     <%= link_to 'Add To Trip', new_trip_path(@trip), class: "btn btn-default" %>
+   
+      <%= link_to 'Create New Trip', new_trip_path(@trip), class: "btn btn-default" %>
+
+      <%= link_to 'Add To Existing Trip', new_attraction_path(unique_id: activity['unique_id']), class: "btn btn-default" %>
     </div>
 
 

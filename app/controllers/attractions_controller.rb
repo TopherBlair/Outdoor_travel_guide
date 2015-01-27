@@ -1,6 +1,7 @@
 class AttractionsController < ApplicationController
   before_action :set_attraction, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :new]
+  before_action :set_trip, only: [:new, :edit]
   
   def show
   end
@@ -16,7 +17,6 @@ class AttractionsController < ApplicationController
       marker.lat attraction.latitude
       marker.lng attraction.longtitude
     end
-
   end
 
   def index
@@ -30,7 +30,7 @@ class AttractionsController < ApplicationController
   def create
     @attraction = Attraction.new(attraction_params)
     if @attraction.save
-      redirect_to @attraction
+      redirect_to trip_path(Trip.find(@attraction.trip_id))
     else
       render :new 
     end
@@ -49,7 +49,7 @@ class AttractionsController < ApplicationController
 
   def destroy
     @attraction.destroy
-    redirect_to attractions_url
+    redirect_to trip_path(Trip.find(@attraction.trip_id))
   end
 
   private
@@ -58,8 +58,12 @@ class AttractionsController < ApplicationController
     @attraction = Attraction.find(params[:id])
   end
 
+  def set_trip
+    @trips = Trip.all
+  end
+
   def attraction_params
-    params.require(:attraction).permit(:title, :category, :url, :photo)
+    params.require(:attraction).permit(:title, :unique_id, :trip_id)
   end
 
 end

@@ -11,22 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150124220822) do
+ActiveRecord::Schema.define(version: 20150126232626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "attractions", force: true do |t|
     t.string   "title"
-    t.string   "category"
-    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "unique_id"
+    t.integer  "trip_id"
   end
+
+  add_index "attractions", ["trip_id"], name: "index_attractions_on_trip_id", using: :btree
 
   create_table "reviews", force: true do |t|
     t.string   "name"
