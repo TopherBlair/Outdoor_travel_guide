@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/attraction_api' => 'attractions#attractions_api', as: 'attraction_api'
  
  	get 'oauth/instagram' => 'oauth#instagram', as: 'instagram_oauth'
- 	# get '/tags/#hiking/media/recent' =>
+ 	
 
 
 
