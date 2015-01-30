@@ -1,7 +1,8 @@
 class TripsController < ApplicationController
 
-before_action :authenticate_user!, only: [:edit, :update, :destroy, :new]
+before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :show, :index]
 before_action :set_users, only: [:new, :edit]
+respond_to :html, :js
 
   def index
   	@trips = Trip.all
@@ -24,7 +25,10 @@ before_action :set_users, only: [:new, :edit]
   	@trip = current_user.trips.build(trip_params)
 
   	if @trip.save
-  		redirect_to trips_path
+      respond_to do |format|
+        format.html { redirect_to( trips_path ) }
+        format.js
+      end
   	else
   		render :new
   	end
@@ -38,7 +42,10 @@ before_action :set_users, only: [:new, :edit]
   	@trip = Trip.find(params[:id])
 
   	if @trip.update_attributes(trip_params)
-  		redirect_to trips_path
+  	  respond_to do |format|
+        format.html { redirect_to( trips_path ) }
+        format.js
+      end  
   	else
   		render :edit
   	end

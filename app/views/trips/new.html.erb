@@ -1,9 +1,2 @@
-<div class="panel" style="color:grey;">
-<h1> Create New Trip </h1>
-<%= form_for @trip do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-
-	<%= f.submit %>
-<% end %>
-</div> 
+<h1> New Trip </h1>
+<%= render partial: 'form', locals: {using_modal: false} %>
