@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126232626) do
-
+ActiveRecord::Schema.define(version: 20150128024350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150126232626) do
     t.integer  "trip_id"
   end
 
+  add_index "attractions", ["trip_id"], name: "index_attractions_on_trip_id", using: :btree
 
   create_table "identities", force: true do |t|
     t.integer  "user_id"
@@ -40,9 +40,6 @@ ActiveRecord::Schema.define(version: 20150126232626) do
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
-  add_index "attractions", ["trip_id"], name: "index_attractions_on_trip_id", using: :btree
-
-
   create_table "reviews", force: true do |t|
     t.string   "name"
     t.text     "body"
@@ -51,6 +48,10 @@ ActiveRecord::Schema.define(version: 20150126232626) do
     t.datetime "updated_at"
     t.string   "unique_id"
     t.integer  "user_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "trips", force: true do |t|
