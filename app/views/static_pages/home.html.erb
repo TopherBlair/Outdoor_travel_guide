@@ -101,12 +101,12 @@
 
   <div class="row">
   
-      <div class="col-md-4 btn-group"><h3>Activity</h3>
+     <div class="col-md-4 btn-group"><h3>Activity</h3>
 
         <%= form_tag attractions_search_path do |f| %>
-        <%= select_tag "Attraction", options_for_select(["camping","mountain biking","hiking","snow sports","trail running","horseback riding","caving"]), class: "form-control", name: 'activty_type' %>
+        <%= select_tag "Attraction", options_for_select(["camping","mountain biking","hiking","snow sports","caving", "water sports"]), class: "form-control", name: 'activity_type' %>
 
-      </div> 
+     </div> 
 
        <div class="col-md-3"><h3>Destination</h3>
       	
@@ -114,12 +114,11 @@
      
         <%= submit_tag 'Submit!', class: "btn btn-default btn-sm" %>
 
-       </div>
+      </div>
  
-      <% end %>
+    <% end %>
 
   </div>
-
 
 
       

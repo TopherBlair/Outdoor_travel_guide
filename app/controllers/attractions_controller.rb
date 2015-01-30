@@ -2,6 +2,7 @@ class AttractionsController < ApplicationController
   before_action :set_attraction, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :new]
   before_action :set_trip, only: [:new, :edit]
+  respond_to :html, :js
   
   def show
   end
@@ -12,7 +13,7 @@ class AttractionsController < ApplicationController
   end
 
   def api_index
-    @api_results = Apis::TrailsApi.get_trails_data(params['city_location'], params['activty_type'])
+    @api_results = Apis::TrailsApi.get_trails_data(params['city_location'], params['activity_type'])
     @map = Gmaps4rails.build_markers(@attractions) do |attraction, marker|
       marker.lat attraction.latitude
       marker.lng attraction.longtitude
@@ -30,7 +31,10 @@ class AttractionsController < ApplicationController
   def create
     @attraction = Attraction.new(attraction_params)
     if @attraction.save
-      redirect_to trip_path(Trip.find(@attraction.trip_id))
+      respond_to do |format|
+        format.html { redirect_to trip_path(Trip.find(@attraction.trip_id)) }
+        format.js
+      end
     else
       render :new 
     end

@@ -10,14 +10,14 @@ Rails.application.routes.draw do
   get '/attraction_api' => 'attractions#attractions_api', as: 'attraction_api'
  
  	get 'oauth/instagram' => 'oauth#instagram', as: 'instagram_oauth'
- 	# get '/tags/#hiking/media/recent' =>
+ 	
 
 
 
   resources :attractions
   resources :reviews
   resources :trips # re route to users page. 
-  resources :instagrams
+  resources :instagrams, only: :index
   devise_for :users, :controllers => { registrations: 'registrations', omniauth_callbacks: 'omniauth_callbacks' }
   resources :users, only: [:show, :index]
 

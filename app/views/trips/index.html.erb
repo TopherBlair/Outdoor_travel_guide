@@ -1,11 +1,14 @@
 <div class="panel" style="color:grey;">
-<h1> Trips </h1><p><%= link_to 'Add a New Trip', new_trip_path %></p>
+<h1> Trips </h1><p><%= link_to 'Create New Trip', new_trip_path(@trip), id: 'new-trip-ajax', remote: true, class: "btn btn-primary" %>
 <% @trips.each do |trip| %>
 	<h2><%= trip.name %></h2>
 	<%= link_to 'Show trip', trip_path(trip.id) %>
-	<%= link_to 'Edit trip', edit_trip_path(trip.id) %>
-	<%= link_to 'Delete', trip, method: :delete %>
+	<%= link_to 'Edit trip', edit_trip_path(trip.id), id: 'edit-trip-ajax', remote: true %>
+	<%= link_to 'Delete', trip, method: :delete, data: { confirm: 'Are you sure that you want to delete?' }%>
 
 <% end %>
+
+<div id='modal-div'>
+</div>
 
 </div> 
