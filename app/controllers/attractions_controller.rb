@@ -2,6 +2,7 @@ class AttractionsController < ApplicationController
   before_action :set_attraction, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :new]
   before_action :set_trip, only: [:new, :edit]
+  respond_to :html, :js
   
   def show
   end
@@ -30,7 +31,10 @@ class AttractionsController < ApplicationController
   def create
     @attraction = Attraction.new(attraction_params)
     if @attraction.save
-      redirect_to trip_path(Trip.find(@attraction.trip_id))
+      respond_to do |format|
+        format.html { redirect_to trip_path(Trip.find(@attraction.trip_id)) }
+        format.js
+      end
     else
       render :new 
     end
