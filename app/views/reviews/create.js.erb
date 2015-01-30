@@ -1,4 +1,2 @@
-// console.log('Whats up!')
-console.log('Created a new review')
 $('#reviews-div').append("<%= j render :partial => 'review', locals: {review: @review, activity: @review.unique_id} %>");
 $('#myModal').modal('hide');

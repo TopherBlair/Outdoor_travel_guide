@@ -22,12 +22,23 @@
 
     <h4>Description</h4>
       <%= activity['description'].html_safe %>
+
+      <div class="footer">
+        <%= link_to 'Reviews', attraction_api_path(activities_unique_id: activity['unique_id']), class: "btn btn-primary" %>
+   
+        <%= link_to 'Create New Trip', new_trip_path(@trip), id: 'new-trip-ajax', remote: true, class: "btn btn-primary" %>
+
+        <%= link_to 'Add To Existing Trip', new_attraction_path(unique_id: activity['unique_id']), id: 'existing-trip-ajax', remote: true, class: "btn btn-primary" %>
+      </div>
  
     </div>
 
   <% end %>
      
   </ol>
+
+  <div id='modal-div'>
+  </div>
 
  
 <% end %>
