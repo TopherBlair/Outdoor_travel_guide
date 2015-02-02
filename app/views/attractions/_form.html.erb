@@ -2,10 +2,7 @@
 
 <div class="panel panel-info">
   <ul class="formList">
-    <li>
-     <%= f.label :photo %>
-     <%= f.file_field :photo %>
-    </li>
+
     <li>
       <%= f.label :name %>
       <%= f.select :trip_id, options_from_collection_for_select(current_user.trips, :id, :name) %>

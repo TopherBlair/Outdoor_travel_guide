@@ -14,6 +14,7 @@ class AttractionsController < ApplicationController
 
   def api_index
     @api_results = Apis::TrailsApi.get_trails_data(params['city_location'], params['activity_type'])
+    # @reviews = Review.where(unique_id: params['activities_unique_id'])
     @map = Gmaps4rails.build_markers(@attractions) do |attraction, marker|
       marker.lat attraction.latitude
       marker.lng attraction.longtitude
