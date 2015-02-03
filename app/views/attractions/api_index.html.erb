@@ -34,6 +34,17 @@
     <h4>Description</h4>
       <%= activity['description'].html_safe %>
 
+    <div id='reviews-div'>
+      <h4>Average User Rating</h4>
+      <% Review.where(unique_id: activity['unique_id']).average('rating').to_i.times do %>
+        <span class="glyphicon glyphicon-star"></span>
+      <% end %>
+
+      <h4>Total Reviews</h4>
+      <%= Review.where(unique_id: activity['unique_id']).count %>   
+    </div>
+    
+
       <div class="footer">
         <%= link_to 'Reviews', attraction_api_path(activities_unique_id: activity['unique_id']), class: "btn btn-primary" %>
    

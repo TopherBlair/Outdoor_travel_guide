@@ -1,5 +1,3 @@
-<div class="panel panel-default">
-
 <h1> Trip </h1>
 <h2><%= @trip.name %></h2>
 <h3>Attractions</h3>
@@ -20,16 +18,5 @@
 			    <%= place['directions'] %>
 			    <h4>Description</h4>
 			    <%= activity['description'] %>
-			    <p><%= link_to 'Remove', attraction, class: "btn btn-warning", method: :delete, data: { confirm: 'Are you sure that you want to remove?' }%>
-			    <%= link_to 'New Review', new_review_path(unique_id: activity['unique_id']), id: 'new-review-ajax', remote: true, class: "btn btn-primary"  %></p>
-		    </div>
-		<% end %>
-	<% end %>
+			</div>
 <% end %>
-
-    <div id='modal-div'>
-    </div>
-    
-	<%= link_to 'Back', trips_path, class: "btn btn-primary" %>
-	<%= link_to 'Add More', root_path, class: "btn btn-primary" %>
-</div> 

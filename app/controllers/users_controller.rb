@@ -32,9 +32,9 @@ class UsersController < ApplicationController
   	if request.patch? && params[:user] # && params[:user][:email]
   		if @user.update(user_params)
   			sign_in(@user, :bypass => true)
-  			redirect_to @user, notice: 'Your profile was successfully updated.'  			
+  			redirect_to user_path(@user), notice: 'Your profile was successfully updated.'  			
   		else
-  			@show_errors = true
+  			redirect_to user_path(@user), notice: 'There was problem' 
   		end
   	end
   end

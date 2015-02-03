@@ -57,6 +57,12 @@ respond_to :html, :js
   	redirect_to trips_path
   end
 
+  def export_trip
+    @trip = Trip.find(params[:id])
+    # Call the UserMailer.trip_mailer(trip, attraction) function and pass in the variables you set
+    # redirect
+  end
+
   private
 
   def set_users

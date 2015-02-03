@@ -32,12 +32,8 @@
     </div>
 
 
-    <p><%= link_to 'New Review', new_review_path(unique_id: activity['unique_id']), id: 'new-review-ajax', remote: true, class: "btn btn-primary"  %></p> 
-         <input type='button' class='pulsebutton'>
-       <div class="text">Like +<span id="value">00</span></div>
-        </input>
+    <p><%= link_to 'New Review', new_review_path(unique_id: activity['unique_id']), id: 'new-review-ajax', remote: true, class: "btn btn-primary"  %></p>
 
-   
   
     <div id='reviews-div'>
       <h5 class="panel-footer"> REVIEWS </h5>
