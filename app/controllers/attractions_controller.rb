@@ -13,11 +13,16 @@ class AttractionsController < ApplicationController
   end
 
   def api_index
-    @api_results = Apis::TrailsApi.get_trails_data(params['city_location'], params['activity_type'])
-    # @reviews = Review.where(unique_id: params['activities_unique_id'])
+    if
+      @api_results = Apis::TrailsApi.get_trails_data(params['city_location'], params['activity_type'])
+      # @reviews = Review.where(unique_id: params['activities_unique_id'])
+    else
+      @attractions = Attraction.all
+    end
     @map = Gmaps4rails.build_markers(@attractions) do |attraction, marker|
       marker.lat attraction.latitude
       marker.lng attraction.longtitude
+      marker.infowindow "You"
     end
   end
 
@@ -68,7 +73,7 @@ class AttractionsController < ApplicationController
   end
 
   def attraction_params
-    params.require(:attraction).permit(:title, :unique_id, :trip_id)
+    params.require(:attraction).permit(:title, :unique_id, :trip_id, :latitude, :longitude)
   end
 
 end

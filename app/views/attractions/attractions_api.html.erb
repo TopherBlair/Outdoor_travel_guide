@@ -8,7 +8,7 @@
     
     <h5 class="panel-title"><%= place['city'] %></h5>
     <h4 class="panel-title"><%= activity['activity_type_name'] %></h4> 
-
+   
     </div>
   
     <div class="panel-body">
@@ -21,7 +21,7 @@
 
     <h4>Description</h4>
       <%= activity['description'] %>
- 
+
     </div>
 
     <div class="footer">
@@ -31,7 +31,9 @@
       <%= link_to 'Add To Existing Trip', new_attraction_path(unique_id: activity['unique_id']), id: 'existing-trip-ajax', remote: true, class: "btn btn-primary" %>
     </div>
 
+
     <p><%= link_to 'New Review', new_review_path(unique_id: activity['unique_id']), id: 'new-review-ajax', remote: true, class: "btn btn-primary"  %></p>
+
   
     <div id='reviews-div'>
       <h5 class="panel-footer"> REVIEWS </h5>
@@ -49,28 +51,32 @@
 
 <% end %>
 </div>
+ 
+<aside>
+ <div id="loc_map" style='height: 400px; text-align: center;'></div> 
+</aside> 
+  
+ <script type="text/javascript">
 
-<div class="row collapsed" style='width: 400px' data-toggle="collapsed">
- <div id="loc_map" style='height: 300px; width: 400;'></div> 
-</div> 
-
-<script>
 var handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'loc_map'}}, function(){
-  var markers = handler.addMarkers([
-    {
-      "lat": 40.756939,
-      "lng": -111.883687,
-      "picture": {
-        "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-        "width":  36,
-        "height": 36
-      },
-      "infowindow": "You!"
-    }
-  ]);
+handler.buildMap({ internal: {id: 'loc_map'}}, function(){
+
+// handler.buildMap({ provider: {}, internal: {id: 'loc_map'}}, function(){
+  // var markers = handler.addMarkers([
+  //   {
+  //     "lat": 40.756939,
+  //     "lng": -111.883687,
+  //     "picture": {
+  //       "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+  //       "width":  36,
+  //       "height": 36
+  //     },
+  //     "infowindow": "You!"
+  //   }
+  // ]);
+  var markers = handler.addMarkers (<%=raw @map.to_json %>);
   handler.map.centerOn(markers[0]);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
 });
- </script>
+</script>

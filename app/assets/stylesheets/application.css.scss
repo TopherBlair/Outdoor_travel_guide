@@ -18,8 +18,11 @@ $navbar_height: 100px;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "reviews";
+@import url(http://fonts.googleapis.com/css?family=Cuprum:400,700);
 
-
+header {
+	padding: 0 10px;
+}
 
 .carousel {
 	margin-top: 45px;
@@ -49,7 +52,6 @@ $navbar_height: 100px;
 	margin-left: 950px;
 	margin-top: 40px;
 	width: 50%;
-	
 }
 
 .btn-sm {
@@ -124,15 +126,69 @@ h3 {
 	top: 100px;
 }
 
+aside {
+	margin-top: 40px;
+}
+// style footer
+
+footer {
+	position: fixed;
+	bottom: 0;
+	height: 45px;
+	color: #3c4a50;
+	width: 100%;
+	background: rgb(20,20,20)
+}
+
+.page-row {
+  display: table-row;
+}
+ 
+.page-row-expanded { height: 100%; }
+
+// style contact page
 body {
 	padding-top: 100px;
 	background: url("http://outdoorgearmadness.com/wp-content/uploads/2012/05/Trail-Running-Wallpaper-1280-x-800.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
-
-
+    height: 100%;
+    display: table;
+    width: 100%;
 }
 
+.svg-wrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+	  margin: 100px auto;
+  width: 320px;  
+}
+.shape {
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  fill: transparent;
+  stroke: #19f6e8;
+  border-bottom: 5px solid black;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+.text {
+  font-family: 'Roboto Condensed';
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #fff;
+  top: -48px;
+  position: relative;
+}
+.svg-wrapper:hover .shape {
+  stroke-width: 2px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
+}
+
+// 
 ul {
 	list-style-type: none;
 	margin: 0;
@@ -142,6 +198,7 @@ ul {
 
 a {
 	display: block;
+	outline: none;
 }
 
 .navbar-brand {
@@ -151,9 +208,6 @@ a {
 	font-variant: small-caps;
 }
 
-// .navbar-text {
-//     text-transform: uppercase;
-// }
 
 .logo {
 	padding-top: 5px;
@@ -167,13 +221,210 @@ a {
     }
     a:hover {
     	color: #fff;
+    	text-decoration: none;
     }
     text-transform:  uppercase;
 
 }
 
-span {
-	color: white;
+// styling mainmenu
+// .mainmenu { color: #ccc; font-size: 16px; font-family: 'Cuprum', Georgia, "Times New Roman", Times, Serif; background: #002244; width: 100%; height: 51px; border: 1px solid #026; border-bottom: 3px solid #012; text-shadow: 0 1px 0 #000;}
+
+// .mainmenu ul {margin: 0; padding: 0; }
+// .mainmenu li i { position: absolute; margin-left: -35px; margin-top: 6px; color: #012;  text-shadow: 0 1px 0 #036;}
+// .mainmenu li { float: left; display: block; padding: 10px 10px 10px 50px; border-right: 1px solid #012; cursor: pointer; min-width: 100px; max-width: 100px; }
+
+// .mainmenu li:hover { background: #012; }
+// .mainmenu li:hover i {color: #036; text-shadow: 0 1px 0 #000;}
+// .mainmenu li main {font-weight: 700; margin-top: -18px; }
+// .mainmenu li desc { position: relative; float: left; font-size: 11px; color: #888; }
+
+// .mainmenu li, .mainmenu li i, .mainmenu li main, .mainmenu li desc {
+//     -moz-transition: all 0.8s ease-in-out;
+//     -o-transition: all 0.8s ease-in-out;
+//     transition: all 0.8s ease-in-out;
+//     -webkit-transition: all 0.8s ease-in-out;}
+
+// .mainmenu li:hover main { margin-left: 10px; 
+//     -moz-transition: all 0.4s ease-in-out;
+//     -o-transition: all 0.4s ease-in-out;
+//     transition: all 0.4s ease-in-out;
+//     -webkit-transition: all 0.4s ease-in-out;}
+// .mainmenu li:hover desc { margin-left: 30px; 
+//     -moz-transition: all 0.4s ease-in-out;
+//     -o-transition: all 0.4s ease-in-out;
+//     transition: all 0.4s ease-in-out;
+//     -webkit-transition: all 0.4s ease-in-out;}
+
+// styling nav menu
+.menu{
+border:none;
+border:0px;
+margin:0px;
+padding:0px;
+font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+font-size:14px;
+font-weight:bold;
+}
+.menu ul{
+// background:#F93;
+background: transparent;
+height:50px;
+list-style:none;
+margin:20px;
+padding:0;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+-webkit-box-shadow: inset 0px 0px 0px 0px rgba(255, 255, 255, .1);
+-moz-box-shadow: inset 0px 0px 0px 0px rgba(255, 255, 255, .1);
+box-shadow: inset 0px 0px 0px 0px rgba(255, 255, 255, .1);
+}
+.menu li{
+float:left;
+padding:0px 0px 0px 0px; 
+}
+.menu li a{
+color:#000;
+display:block;
+font-weight:normal;
+line-height:50px;
+margin:0px;
+padding:0px 25px;
+text-align:center;
+text-decoration:none;
+}
+.menu li a:hover{
+background:#C60;
+color:#FFFFFF;
+text-decoration:none;
+-webkit-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
+-moz-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
+box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
+}
+.menu ul li:hover a{
+background:#C60;
+color:#FFFFFF;
+text-decoration:none;
+}
+.menu li ul{
+display:none;
+height:auto;
+padding:0px;
+margin:0px;
+border:0px;
+position:absolute;
+width:150px;
+z-index:200;
+}
+.menu li:hover ul{
+display:block; 
+}
+.menu li li {
+display:block;
+float:none;
+margin:0px;
+padding:0px;
+width:160px;
+background:#F93;
+/*this is where the rounded corners for the dropdown disappears*/
+}
+.menu li:hover li a{
+background:none;
+}
+.menu li ul a{
+display:block;
+height:50px;
+font-size:12px;
+font-style:normal;
+margin:0px;
+padding:0px 10px 0px 15px;
+text-align:left;
+}
+.menu li ul a:hover, .menu li ul li:hover a{
+border:0px;
+color:#ffffff;
+text-decoration:none;
+background:#C60;
+-webkit-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
+-moz-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
+box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3); 
 }
 
+// adding rating stars
+.classrating {
+background-color: #ECECEC;
+height: 20px;
+left: 6px;
+bottom: -6px;
+position: absolute;
+width: 110px;
+border: 1px #CCC dashed;
+}
 
+.star-rating {
+border: 0;
+list-style: none;
+width: 100px;
+height: 20px;
+position: relative;
+overflow: hidden;
+background: url("http://www.iconsdb.com/images/star.png") top left repeat-x;
+margin: 0;
+padding: 0;
+}
+
+.star-rating li.current-rating {
+background: url("http://www.iconsdb.com/images/star.png") left center;
+position: absolute;
+height: 20px;
+left: 0;
+display: block;
+text-indent: -9000px;
+z-index: 1;
+}
+
+.star-rating li {
+width: 20px;
+height: 20px;
+float: left;
+margin: 0;
+padding: 0;
+}
+
+.star-rating a.one-star {
+left: 0;
+}
+
+.star-rating a.two-stars {
+left: 20px;
+}
+
+.star-rating a.three-stars {
+left: 40px;
+}
+
+.star-rating a.four-stars {
+left: 60px;
+}
+
+.star-rating a.five-stars {
+left: 80px;
+}
+
+.star-rating li a {
+display: block;
+width: 20px;
+height: 20px;
+line-height: 20px;
+text-decoration: none;
+text-indent: -9000px;
+z-index: 20;
+position: absolute;
+overflow: hidden;
+padding: 0;
+}
+
+div {
+	display: block;
+}
