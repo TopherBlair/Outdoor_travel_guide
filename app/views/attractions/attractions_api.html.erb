@@ -33,7 +33,7 @@
 
 
     <p><%= link_to 'New Review', new_review_path(unique_id: activity['unique_id']), id: 'new-review-ajax', remote: true, class: "btn btn-primary"  %></p>
-
+    
   
     <div id='reviews-div'>
       <h5 class="panel-footer"> REVIEWS </h5>
@@ -51,10 +51,12 @@
 
 <% end %>
 </div>
- 
-<aside>
- <div id="loc_map" style='height: 400px; text-align: center;'></div> 
-</aside> 
+
+
+<div class="row">
+ <div id="loc_map" style='height: 400px; text-align: center;'></div>
+</div> 
+
   
  <script type="text/javascript">
 
