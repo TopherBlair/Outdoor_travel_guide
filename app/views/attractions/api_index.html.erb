@@ -15,17 +15,6 @@
     <div class="panel-body">
     <h4>Name</h4>
      <%= link_to place['name'], attraction_api_path(activities_unique_id: activity['unique_id']) %>
-    <div id="classrating">
-     <ul class="star-rating">
-      <li class="current-rating" style="width:92.2px;"></li>
-      <li><a href='javascript:take_rating("437", "1");' title="1 out of 5 stars" class="one-star"></a></li> 
-      <li><a href='javascript:take_rating("437", "2");' title="2 out of 5 stars" class="two-stars"></a></li> 
-      <li><a href='javascript:take_rating("437", "3");' title="3 out of 5 stars" class="three-stars"></a></li>
-      <li><a href='javascript:take_rating("437", "4");' title="4 out of 5 stars" class="four-stars"></a></li>
-      <li><a href='javascript:take_rating("437", "5");' title="5 out of 5 stars" class="five-stars"></a></li> 
-     </ul> 
-    </div>
-
 
     <h4>Directions</h4>
       <%= place['directions'] %>
