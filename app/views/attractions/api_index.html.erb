@@ -2,14 +2,16 @@
 
 <div class="panel panel-default">
 
+  <% if @api_results['places'] == [] %>
+    <h4> Sorry, nothing found.  Please try another search. </h4>
+    <%= link_to 'New Search', root_path, class: "btn btn-primary" %>
+  <% end %>  
   <% @api_results['places'].each do |place| %>
   <% place['activities'].each do |activity| %>
   
   <div class="panel-heading">
-    
-    <h5 class="panel-title"><%= place['city'] %></h5>
-    <h4 class="panel-title"><%= activity['activity_type_name'] %></h4>
-   
+      <h5 class="panel-title"><%= place['city'] %></h5>
+      <h4 class="panel-title"><%= activity['activity_type_name'] %></h4>
   </div>
   
     <div class="panel-body">
