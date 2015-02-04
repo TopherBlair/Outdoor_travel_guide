@@ -15,6 +15,7 @@ class Attraction < ActiveRecord::Base
  # geocoded_by :unique_id
  # after_validation :geocode
 
+
  # reverse_geocode_by :latitude, :longtitude
  # after_validation :reverse_geocode 
 end

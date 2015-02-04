@@ -18,7 +18,7 @@ class AttractionsController < ApplicationController
 
     @map = Gmaps4rails.build_markers(@attractions) do |attraction, marker|
       marker.lat attraction.latitude
-      marker.lng attraction.longtitude
+      marker.lng attraction.longitude
       marker.infowindow "You"
     end
   end
