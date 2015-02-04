@@ -95,6 +95,7 @@
 
   <div class="col-md-6">
     <div class="btn-group">
+    	<small>Route your destination!</small>
     	<h3>Activity</h3>
       <%= form_tag attractions_search_path do |f| %>
       <%= select_tag "Attraction", options_for_select(["camping","mountain biking","hiking","snow sports","caving", "water sports"]), class: "form-control", name: 'activity_type' %>
