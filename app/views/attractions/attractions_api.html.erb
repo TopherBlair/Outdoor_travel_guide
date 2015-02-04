@@ -40,6 +40,7 @@
       <h5 class="panel-footer"> REVIEWS </h5>
       <% @reviews.each do |review| %>
         <%= render 'reviews/review', review: review, activity: activity %>
+        <p><%= image_tag review.photo.url, size: "300x200" %></p>
       <% end %>
     </div>
 
@@ -74,6 +75,14 @@
         map: map,
         title:"This is the place."
     });
+    var contentString = 'Hello <strong>World</strong>!';
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
+    });
+ 
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(map,marker);
+    });
   }
   function detectBrowser() {
     var useragent = navigator.userAgent;
@@ -83,8 +92,8 @@
       mapdiv.style.width = '100%';
       mapdiv.style.height = '100%';
     } else {
-      mapdiv.style.width = '600px';
-      mapdiv.style.height = '800px';
+      mapdiv.style.width = '450px';
+      mapdiv.style.height = '450px';
     }
     }
 
