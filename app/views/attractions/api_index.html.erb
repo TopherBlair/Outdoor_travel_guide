@@ -52,7 +52,27 @@
   <div id='modal-div'>
   </div>
 
+  <div class="row">
+ <div id="loc_map" style='height: 480px; width: 480px; text-align: center;'></div>
+  </div> 
  
+  <script>
+var myCenter=new google.maps.LatLng(45.434046,12.340284);
+
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:18,
+  mapTypeId:google.maps.MapTypeId.TERRAIN
+  };
+
+var map=new google.maps.Map(document.getElementById("loc_map"),mapProp);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+   </script>
+
 <% end %>
 </div>
 
