@@ -10,13 +10,13 @@ class Attraction < ActiveRecord::Base
  
  belongs_to :trip
 
- extend Geocoder::Model::ActiveRecord
+ # extend Geocoder::Model::ActiveRecord
 
- geocoded_by :unique_id
- after_validation :geocode
+ # geocoded_by :unique_id
+ # after_validation :geocode
 
- reverse_geocode_by :latitude, :longtitude
- after_validation :reverse_geocode 
+ # reverse_geocode_by :latitude, :longtitude
+ # after_validation :reverse_geocode 
 end
 
 
