@@ -22,6 +22,11 @@ $navbar_height: 100px;
 
 header {
 	padding: 0 10px;
+  position: static;
+}
+
+.jumbotron {
+  background: rgba(0, 20, 3, 0.6);
 }
 
 .carousel {
@@ -103,6 +108,9 @@ h3 {
 	.panel-body {
 		color: grey;
 	}
+	.panel-heading {
+		background-color: rgb(20,20,20);
+	}
 
 }
 
@@ -125,10 +133,6 @@ h3 {
 
 aside {
 	margin-top: 40px;
-}
-
-header {
-	position: static;
 }
 
 // style footer
@@ -163,7 +167,8 @@ body {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-	  margin: 85px auto;
+	  // margin: 85px auto;
+	  margin-top: 116px;
   width: 320px;  
 }
 .shape {
