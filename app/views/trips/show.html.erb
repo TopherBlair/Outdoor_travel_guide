@@ -1,8 +1,9 @@
-<div class="panel panel-default">
+<div id="myTripModal">
+	<div class="panel panel-default">
 
 <h1> My Trips </h1>
 <h2><%= @trip.name %></h2>
-<h3>Attractions</h3>
+<h3>Activities</h3>
 <% @trip.attractions.each do |attraction| %>
 	<p><%= attraction.title %></p>
 	<% @api_unique_id_results = Apis::TrailsApi.get_trails_data_id(attraction.unique_id) %>
@@ -31,6 +32,8 @@
     </div>
     
 	<%= link_to 'Back', trips_path, class: "btn btn-primary" %>
-	<%= link_to 'Add More', root_path, class: "btn btn-primary" %>
+	<%= link_to 'Add Activity', root_path, class: "btn btn-primary" %>
 	<%= link_to 'Mail It To Me', user_mailer_path(id: @trip.id), class: "btn btn-primary" %>
 </div> 
+</div>
+

@@ -22,6 +22,11 @@ $navbar_height: 100px;
 
 header {
 	padding: 0 10px;
+  position: static;
+}
+
+.jumbotron {
+  background: rgba(0, 20, 3, 0.6);
 }
 
 .carousel {
@@ -103,6 +108,9 @@ h3 {
 	.panel-body {
 		color: grey;
 	}
+	.panel-heading {
+		background-color: rgb(20,20,20);
+	}
 
 }
 
@@ -127,43 +135,35 @@ aside {
 	margin-top: 40px;
 }
 
-header {
-	position: static;
-}
-
 // style footer
 
 footer {
 	position: fixed;
+  float: left;
 	bottom: 0;
 	height: 39px;
 	color: #3c4a50;
-	width: 100%;
+  width: 100%;
 	background: rgb(20,20,20)
 }
 
-.page-row {
-  display: table-row;
-}
- 
-.page-row-expanded { height: 100%; }
-
 // style contact page
 body {
-	padding-top: 100px;
+  padding-top: 100px;
 	background: url("http://outdoorgearmadness.com/wp-content/uploads/2012/05/Trail-Running-Wallpaper-1280-x-800.jpg") no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
-    height: 100%;
-    display: table;
-    width: 100%;
+  background-attachment: fixed;
+  background-size: 100%;
+  height: 100%;
+  display: table;
+  width: 100%;
 }
 
 .svg-wrapper {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-	  margin: 85px auto;
+	  // margin: 85px auto;
+	  margin-top: 116px;
   width: 320px;  
 }
 .shape {

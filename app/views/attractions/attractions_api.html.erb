@@ -1,12 +1,9 @@
 
 <div class="panel panel-default">
-<% @api_unique_id_results['places'].each do |place| %>
-
-  <% place['activities'].each do |activity| %>
+ <% @api_unique_id_results['places'].each do |place| %>
+ <% place['activities'].each do |activity| %>
   
   <div class="panel-heading">
-   <ol>
-    
     <h5 class="panel-title"><%= place['city'] %></h5>
     <h4 class="panel-title"><%= activity['activity_type_name'] %></h4> 
    
@@ -15,14 +12,10 @@
     <div class="panel-body">
     <h4>Name</h4>
       <%= place['name'] %>
-
     <h4>Directions</h4>
       <%= place['directions'] %>
-
-
     <h4>Description</h4>
       <%= activity['description'] %>
-
     </div>
 
     <div class="footer">
