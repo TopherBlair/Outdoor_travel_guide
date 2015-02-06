@@ -139,28 +139,23 @@ aside {
 
 footer {
 	position: fixed;
+  float: left;
 	bottom: 0;
 	height: 39px;
 	color: #3c4a50;
-	width: 100%;
+  width: 100%;
 	background: rgb(20,20,20)
 }
 
-.page-row {
-  display: table-row;
-}
- 
-.page-row-expanded { height: 100%; }
-
 // style contact page
 body {
-	padding-top: 100px;
+  padding-top: 100px;
 	background: url("http://outdoorgearmadness.com/wp-content/uploads/2012/05/Trail-Running-Wallpaper-1280-x-800.jpg") no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
-    height: 100%;
-    display: table;
-    width: 100%;
+  background-attachment: fixed;
+  background-size: 100%;
+  height: 100%;
+  display: table;
+  width: 100%;
 }
 
 .svg-wrapper {
