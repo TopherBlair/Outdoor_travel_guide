@@ -1,93 +1,57 @@
 <!-- <h1>Attractions </h1> -->
 
 <div class="panel panel-default">
-
   <% if @api_results['places'] == [] %>
-    <div class="modal fade">
-     <div class="modal-dialog">
-      <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Sorry, nothing found.  Please try another search.</h4>
-      </div>
-      <div class="modal-body">
-        <p>One fine body&hellip;</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary"><%= link_to 'New Search', root_path, class: "btn btn-primary" %></button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div>
-    
+    <h7>Sorry, nothing found.  Please try another search.</h7>
+    <%= link_to ' Home', root_path, class: "btn btn-danger" %>
   <% end %>  
   <% @api_results['places'].each do |place| %>
   <% place['activities'].each do |activity| %>
-  
   <div class="panel-heading">
-      <h5 class="panel-title"><%= place['city'] %></h5>
-      <h4 class="panel-title"><%= activity['activity_type_name'] %></h4>
+    <h5><strong class="bold-cap"><%= place['city'] %> </strong>
+    <%= activity['activity_type_name'] %>
+    <%= link_to 'Save To Trip', new_attraction_path(unique_id: activity['unique_id']), id: 'existing-trip-ajax', remote: true, class: "add-trip" %></h5> 
   </div>
-  
-    <div class="panel-body">
-    <h4>Name</h4>
-     <%= link_to place['name'], attraction_api_path(activities_unique_id: activity['unique_id']) %>
-
-    <h4>Directions</h4>
-      <%= place['directions'] %>
-    
-    <h4>Description</h4>
-      <%= activity['description'].html_safe %>
-
-    <div id='reviews-div'>
-      <h4>Average User Rating</h4>
+  <div class="panel-body">
+    <ol><%= link_to place['name'], attraction_api_path(activities_unique_id: activity['unique_id']), class: "atr-name" %></ol> 
+    <h6>Average Rating:
       <% Review.where(unique_id: activity['unique_id']).average('rating').to_i.times do %>
         <span class="glyphicon glyphicon-star"></span>
-      <% end %>
-
-      <h4>Total Reviews</h4>
-      <%= Review.where(unique_id: activity['unique_id']).count %>   
-    </div>
-    
-
-      <div class="footer">
-        <%= link_to 'Reviews', attraction_api_path(activities_unique_id: activity['unique_id']), class: "btn btn-primary" %>
-   
-        <%= link_to 'Create New Trip', new_trip_path(@trip), id: 'new-trip-ajax', remote: true, class: "btn btn-primary" %>
-
-        <%= link_to 'Add To Existing Trip', new_attraction_path(unique_id: activity['unique_id']), id: 'existing-trip-ajax', remote: true, class: "btn btn-primary" %>
-      </div>
- 
-    </div>
-
+      <% end %> 
+      - <%= Review.where(unique_id: activity['unique_id']).count %> reviews</h6>
+    <li><h4>Directions</h4></li>
+    <%= place['directions'] %>
+    <li><h4>Description</h4></li>
+    <%= activity['description'].html_safe.strip %>
+  </div>
   <% end %>
-     
+
 
   <div id='modal-div'>
   </div>
 
   <div class="row">
- <div id="loc_map" style='height: 450px; width: 450px; text-align: center;'></div>
+    <%= link_to 'New Trip', new_trip_path(@trip), id: 'new-trip-ajax', remote: true, class: "btn myButton3" %>
+    <div id="loc_map" style='height: 450px; width: 450px; text-align: center;'></div>
   </div> 
- 
+
   <script>
-var myCenter=new google.maps.LatLng(0,0);
+    var myCenter=new google.maps.LatLng(0,0);
 
-function initialize()
-{
-var mapProp = {
-  center:myCenter,
-  zoom:18,
-  mapTypeId:google.maps.MapTypeId.TERRAIN
-  };
+    function initialize()
+    {
+      var mapProp = {
+        center:myCenter,
+        zoom:18,
+        mapTypeId:google.maps.MapTypeId.TERRAIN
+      };
 
-var map=new google.maps.Map(document.getElementById("loc_map"),mapProp);
-}
+      var map=new google.maps.Map(document.getElementById("loc_map"),mapProp);
+    }
 
-google.maps.event.addDomListener(window, 'load', initialize);
-   </script>
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
 
-<% end %>
+  <% end %>
 </div>
 

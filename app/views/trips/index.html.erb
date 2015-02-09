@@ -1,83 +1,86 @@
-
 <div class="container">
   <div class="panel-group col-md-6" id="accordion" role="tablist" aria-multiselectable="true">
-  <% @trips.each_with_index do |trip, index| %>
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="heading<%= index %>">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
-              <%= trip.name %>
-            </a>
-          </h4>
-        </div>
-        <div id="collapse<%= index %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<%= index %>">
-          <div class="panel-body">
-            <div class="btn-group btn-group-justified">
-              <div class="btn-group">
-                <button class="btn btn-default" data-target="#myTripModal" data-toggle="modal">
-                  <%= link_to 'Show trip', trip_path(trip.id) %>
-                </button>
-              </div>
-              <div class="btn-group">
-                <button class="btn btn-default">
-                  <%= link_to 'Edit trip', edit_trip_path(trip.id), id: 'edit-trip-ajax', remote: true %>
-                </button>
-              </div>
-              <div class="btn-group">
-                <button class="btn btn-default">
-                  <%= link_to 'Delete', trip, method: :delete, data: { confirm: 'Are you sure that you want to delete?' }%>
-                </button>
-              </div>
+    <% @trips.each_with_index do |trip, index| %>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="heading<%= index %>">
+        <h6 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
+            <%= trip.name %>
+          </a>
+        </h6>
+      </div>
+      <div id="collapse<%= index %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<%= index %>">
+        <div class="panel-body">
+          <div class="btn-group btn-group-justified">
+            <div class="btn-group">
+              <button class="btn myButton4" data-target="#myTripModal<%= index  %>" data-toggle="modal">
+              View
+              </button>
+            </div>
+            <div class="btn-group">
+              <%= link_to 'Edit', edit_trip_path(trip.id), id: 'edit-trip-ajax', remote: true, class: "btn myButton4" %>
+            </div>
+            <div class="btn-group">
+              <%= link_to 'Delete', trip, method: :delete, data: { confirm: 'Are you sure that you want to delete?' }, class: "btn myButton4" %>
             </div>
           </div>
         </div>
-      </div>      
-  <% end %>
+      </div>
+    </div>      
+    <% end %>
   </div>
   <div class="col-md-6">
     <div class="svg-wrapper">
       <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
         <rect class="shape" height="60" width="320" />
         <div class="text" align="center">MY TRIPS</div>
-        <p align="center"><%= link_to 'Create New Trip', new_trip_path(@trip), id: 'new-trip-ajax', remote: true, class: "btn btn-primary" %></p>
-        <a data-toggle="modal" data-target="#myTripModal" href="#">Open modal</a>
+        <p align="center"><%= link_to 'Create New Trip', new_trip_path(@trip), id: 'new-trip-ajax', remote: true, class: "btn myButton3" %></p>
       </svg>
     </div>   
-
   </div> 
 </div>
 
 
 <div id='modal-div'></div> 
 
-
 <!-- Modal -->
 <% @trips.each_with_index do |trip, index| %>
-<div class="modal fade" id="myTripModal" tabindex="-1" role="dialog" aria-labelledby="myTripModalLabel" aria-hidden="true">
+<div class="modal fade" id="myTripModal<%= index  %>" tabindex="-1" role="dialog" aria-labelledby="myTripModalLabel<%= index  %>" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myTripModalLabel"><%= trip.name %></h4>
+        <h7 class="modal-title" id="myTripModalLabel">
+            <%= link_to '+ Activity', root_path, class: "btn myButton3" %>
+            <%= link_to 'Mail It¡', user_mailer_path(id: trip.id), class: "btn myButton3" %>
+            <%#= trip.name %>
+        </h7>
       </div>
       <div class="modal-body">
-        
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">
-          Close
-        </button>
-          <%= link_to 'Add Activity', root_path, class: "btn btn-primary" %>
-
-        <button type="button" class="btn btn-default">
-        
-        </button> 
+        <% trip.attractions.each do |attraction| %>
+          <%= attraction.title %>
+            <% @api_unique_id_results = Apis::TrailsApi.get_trails_data_id(attraction.unique_id) %>
+              <% @api_unique_id_results['places'].each do |place| %>
+                <% place['activities'].each do |activity| %>
+                  <div class="panel-heading">  
+                    <h3><strong class="bold-cap"><%= place['city'] %></strong>
+                      <%= activity['activity_type_name'] %>
+                    </h3> 
+                  </div> 
+                    <div class="panel-body">
+                      <ol class="atr-name"><%= place['name'] %></ol>
+                    <li><h4>Directions</h4></li>
+                      <%= place['directions'] %>
+                    <li><h4>Description</h4></li>
+                      <%= activity['description'] %>
+                    <p class="btn btn-group-justified"><%= link_to 'Remove', attraction, class: "btn myButton4", method: :delete, data: { confirm: 'Are you sure that you want to remove?' }%></p>               
+                    </div>
+                <% end %>
+              <% end %>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
+</div>     
 <% end %>
-
 

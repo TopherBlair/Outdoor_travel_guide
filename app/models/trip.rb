@@ -1,4 +1,6 @@
 class Trip < ActiveRecord::Base
+  has_many :attractions
+  belongs_to :user
 	# attr_accessible :name, :price, :release_on
 
 	# def self.to_csv
@@ -9,8 +11,4 @@ class Trip < ActiveRecord::Base
 	# 		end
 	# 	end
 	# end
-
-has_many :attractions
-belongs_to :user
-
 end

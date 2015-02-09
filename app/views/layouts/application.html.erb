@@ -7,11 +7,13 @@
 	  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	  <link rel="stylesheet" type="text/css" href="../reviews.css.scss">
 	  <link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" /> 
+    <link rel="stylesheet" href="application.css.scss" />
 	  <%= stylesheet_link_tag    'application', media: 'all' %>
 	  <%= javascript_include_tag 'application' %>
 	  <%= csrf_meta_tags %>
-	 
-
+      
+      <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+      <script type="text/javascript" src="restive.min.js"></script>
       <script src='http://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY']%>' type="text/javascript"></script>
       <script src="http://maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry" type="text/javascript"></script>
       <script src='http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js?key=<%= ENV['GOOGLE_API_KEY']%>' type='text/javascript'></script>
@@ -30,7 +32,5 @@
 <p><%= yield %></p> 
 
 </body>
- <footer><br>
-    <p align="right">Copyright © 2015 | Outdoor Travel Guide. All rights reserved.</p>  
-  </footer>
+<%= render "layouts/footer" %> 
 </html>
