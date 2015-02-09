@@ -14,6 +14,8 @@ class AttractionsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
+    @user = User.create!({:email => "yayaya@email.com", :password => "password", :password_confirmation => "password"})
+      sign_in @user
     get :new
     assert_response :success
   end
@@ -24,6 +26,8 @@ class AttractionsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
+    @user = User.create!({:email => "yayaya@email.com", :password => "password", :password_confirmation => "password"})
+      sign_in @user
     get :edit, id: attractions(:one)
     assert_response :success
   end
