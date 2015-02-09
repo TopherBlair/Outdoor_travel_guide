@@ -14,7 +14,7 @@ class AttractionsController < ApplicationController
 
   def api_index
     @api_results = Apis::TrailsApi.get_trails_data(params['city_location'], params['activity_type'])
-      
+
     @markers = []
     @api_results['places'].each do |place|
       if place['lat'] != 0 && place['lon'] != 0
@@ -25,9 +25,9 @@ class AttractionsController < ApplicationController
 
   end
 
-  def index
-    @attractions = Attraction.all
-  end
+  # def index
+  #   @attractions = Attraction.all
+  # end
 
   def new
     @attraction = Attraction.new
@@ -58,7 +58,7 @@ class AttractionsController < ApplicationController
 
   def destroy
     @attraction.destroy
-    redirect_to trip_path(Trip.find(@attraction.trip_id))
+    redirect_to trips_path
   end
 
   private

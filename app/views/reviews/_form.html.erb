@@ -1,28 +1,22 @@
 <%= form_for(@review, remote: using_modal, :authenticity_token => true) do |f| %>
-  <div class="panel panel-info" >
-   
-  	  <%= f.label :name %>
-  	  <%= f.text_field :name %>
+  <div class="m-body">
+    <ul>
+  	  <li class="r-name"><%= f.label :name, 'Place' %></li>
+  	  <%= f.text_field :name %><br>
+  	  <i><%= f.label :rating %>
+  	  <%= f.select :rating, ["1 star", "2 stars", "3 stars", "4 stars", "5 stars"] %></i>
 
-  	  <%= f.label :rating %>
-  	  <%= f.select :rating, ["1 star", "2 stars", "3 stars", "4 stars", "5 stars"] %>
-   
-      
-  	  <%= f.label :body %>
-  	  <%= f.text_field :body %>
+  	  <li class="r-name"><%= f.label :body, 'Input' %></li> 
+  	  <%= f.text_area :body %>
 
-      
-    <div class='field'>
-      <%= f.label :photo, "Photo" %>
-      <%= f.file_field :photo %>
-    </div>
-
+      <i><%= f.file_field :photo %></i>
+    </ul>
   	<%= f.hidden_field :unique_id, value: params[:unique_id] %>
-
-    <%= f.submit %>
-	  <% if using_modal %>
-      <button type="button" data-dismiss="modal">Close</button>
-    <% end %>
-  
+    <div class="btn btn-group-justified">
+      <%= f.submit %>
+  	  <% if using_modal %>
+        <button type="button" data-dismiss="modal">Close</button>
+      <% end %> 
+    </div>
   </div> 
 <% end %>

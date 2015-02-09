@@ -1,15 +1,16 @@
 class Attraction < ActiveRecord::Base
+ belongs_to :trip
+ 
  has_attached_file :photo, styles: { thumbnail: "60x60>" }
  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
  
+
     def latitude
- 	end	
+    end 
   
     def longtitude
     end
  
- belongs_to :trip
-
  # extend Geocoder::Model::ActiveRecord
 
  # geocoded_by :unique_id

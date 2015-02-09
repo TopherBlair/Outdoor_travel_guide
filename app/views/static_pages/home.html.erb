@@ -94,14 +94,15 @@
 
 
   <div class="col-md-6">
-    <div class="btn-group"><h3>Activity</h3>
-      <%= form_tag attractions_search_path do |f| %>
-      <%= select_tag "Attraction", options_for_select(["camping","mountain biking","hiking","snow sports","caving", "water sports"]), class: "form-control", name: 'activity_type' %>
-    </div>
-    <h3>Destination</h3>
-    <input type="text" class="form-control" name='city_location' style='width:200px;' placeholder="Which city?">
-    <%= submit_tag 'Submit!', class: "btn btn-default" %>
-     <% end %>
+    <div class="btn-group">
+      <h3>Activity</h3>
+        <%= form_tag attractions_search_path do |f| %>
+        <%= select_tag "Attraction", options_for_select(["camping","mountain biking","hiking","snow sports","caving", "water sports"]), class: "form-control", name: 'activity_type' %>
+      <h3>Destination</h3>
+        <input type="text" class="form-control" name='city_location' style='width:200px;' placeholder="Which city?"><br>
+        <%= submit_tag 'Submit!', class: "btn myButton3" %>
+        <% end %>
+      </div> 
   </div>
 
  

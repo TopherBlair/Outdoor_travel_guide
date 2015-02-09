@@ -8,7 +8,7 @@ class AttractionsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get index when not logged in" do
+  test "should get index" do
     get :index
     assert_response :success
   end

@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :reviews
+  has_many :trips
+
 	has_attached_file :photo, styles: { thumbnail: "20x20>" },
 	   :url	=> "/assets/users/:id/:style/:basename.:extenstion",
 	   :path => ":rails_root/public/assets/users/:id/:style/:basename.:extention"
@@ -57,9 +60,5 @@ class User < ActiveRecord::Base
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
-
-has_many :reviews
-
-has_many :trips
 
 end

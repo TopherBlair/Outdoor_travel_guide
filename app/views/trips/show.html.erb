@@ -1,39 +1,33 @@
 <div id="myTripModal">
 	<div class="panel panel-default">
-
-<h1> My Trips </h1>
-<h2><%= @trip.name %></h2>
-<h3>Activities</h3>
-<% @trip.attractions.each do |attraction| %>
-	<p><%= attraction.title %></p>
-	<% @api_unique_id_results = Apis::TrailsApi.get_trails_data_id(attraction.unique_id) %>
-	<% @api_unique_id_results['places'].each do |place| %>
-	  <% place['activities'].each do |activity| %>
-		  <div class="panel-heading">
-		    <h5 class="panel-title"><%= place['city'] %></h5>
-		    <h4 class="panel-title"><%= activity['activity_type_name'] %></h4> 
-		  </div>
-		  
-		    <div class="panel-body">
-			    <h4>Name</h4>
-			    <%= place['name'] %>
-			    <h4>Directions</h4>
-			    <%= place['directions'] %>
-			    <h4>Description</h4>
-			    <%= activity['description'] %>
-			    <p><%= link_to 'Remove', attraction, class: "btn btn-warning", method: :delete, data: { confirm: 'Are you sure that you want to remove?' }%>
-			    <%= link_to 'New Review', new_review_path(unique_id: activity['unique_id']), id: 'new-review-ajax', remote: true, class: "btn btn-primary"  %></p>
-		    </div>
+		<h1> My Trips </h1>
+		<h2><%= @trip.name %></h2>
+		<h3>Activities</h3>
+		<% @trip.attractions.each do |attraction| %>
+			<p><%= attraction.title %></p>
+			<% @api_unique_id_results = Apis::TrailsApi.get_trails_data_id(attraction.unique_id) %>
+				<% @api_unique_id_results['places'].each do |place| %>
+	  			<% place['activities'].each do |activity| %>
+		  			<div class="panel-heading">
+		    			<h5 class="panel-title"><%= place['city'] %></h5>
+		    			<h4 class="panel-title"><%= activity['activity_type_name'] %></h4> 
+		  			</div>
+		    		<div class="panel-body">
+			    		<h4>Name</h4>
+			    		<%= place['name'] %>
+			    		<h4>Directions</h4>
+			    		<%= place['directions'] %>
+			    		<h4>Description</h4>
+			    		<%= activity['description'] %>
+			    		<p><%= link_to 'Remove', attraction, class: "btn btn-warning", method: :delete, data: { confirm: 'Are you sure that you want to remove?' }%>
+			    		<%= link_to 'New Review', new_review_path(unique_id: activity['unique_id']), id: 'new-review-ajax', remote: true, class: "btn btn-primary"  %></p>
+		    		</div>
+					<% end %>
+				<% end %>
 		<% end %>
-	<% end %>
-<% end %>
-
-    <div id='modal-div'>
-    </div>
-    
-	<%= link_to 'Back', trips_path, class: "btn btn-primary" %>
-	<%= link_to 'Add Activity', root_path, class: "btn btn-primary" %>
-	<%= link_to 'Mail It To Me', user_mailer_path(id: @trip.id), class: "btn btn-primary" %>
-</div> 
+		<%= link_to 'Back', trips_path, class: "btn btn-primary" %>
+		<%= link_to 'Add Activity', root_path, class: "btn btn-primary" %>
+		<%= link_to 'Mail It To Me', user_mailer_path(id: @trip.id), class: "btn btn-primary" %>
+	</div> 
 </div>
 
