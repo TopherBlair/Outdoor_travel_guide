@@ -50,7 +50,7 @@
           map: map,
           title:"This is the place."
       });
-      var contentString = 'Hello <strong>World</strong>!';
+      var contentString = place['name']   ;
       var infowindow = new google.maps.InfoWindow({
           content: contentString
       });
@@ -59,6 +59,7 @@
         infowindow.open(map,marker);
       });
     }
+
     function detectBrowser() {
       var useragent = navigator.userAgent;
       var mapdiv = document.getElementById("loc_map");
