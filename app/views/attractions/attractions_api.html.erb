@@ -4,7 +4,8 @@
     <% place['activities'].each do |activity| %>
       <div class="panel-heading">
         <h5><strong class="bold-cap"><%= place['city'] %> </strong>
-          <%= activity['activity_type_name'] %></h5>    
+          <%= activity['activity_type_name'] %>
+          <%= link_to 'Save To Trip', new_attraction_path(unique_id: activity['unique_id']), id: 'existing-trip-ajax', remote: true, class: "add-trip" %></h5>    
       </div> 
       <div class="panel-body">
         <ol class="atr-name"><%= place['name'] %></ol>
