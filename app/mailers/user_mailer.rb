@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "from@otg.com"
+  default from: "from: outdoortravelguide.herokuapp.com"
 
   def trip_mailer(trip, user)
   	@trip = trip
