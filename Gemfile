@@ -51,7 +51,7 @@ gem "letter_opener", :group => :development
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
-
+gem "figaro"
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'geocoder'
