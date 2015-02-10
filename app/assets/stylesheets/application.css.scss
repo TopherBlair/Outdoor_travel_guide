@@ -158,9 +158,11 @@ h7 {
     margin-right: 0;
   }
 }
-@media (max-width: 800px) { .panel {
-  width: 80%;
-}}
+@media (max-width: 800px) { 
+  .panel { 
+    width: 80%;
+  }
+}
 
 // modal input color
 .r-name {
@@ -320,7 +322,7 @@ a {
 .menu ul {
   background:#F93;
   height:50px;
-  list-style:none;
+  list-style: none;
   margin-top:35px;
   margin-right:0;
   padding:0;
@@ -454,4 +456,3 @@ a {
   background: -o-linear-gradient(#fff, #999);
   text-align: justify;
 }
-
