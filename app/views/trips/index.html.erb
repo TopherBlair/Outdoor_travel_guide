@@ -51,9 +51,16 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h7 class="modal-title" id="myTripModalLabel">
+<<<<<<< HEAD
             <%= link_to '+ Activity', root_path, class: "btn myButton3" %>
             <%= link_to 'Mail It¡', user_mailer_path(id: trip.id), class: "btn myButton3" %>
             <%#= trip.name %>
+=======
+            <%= trip.name %>
+            <%= link_to '+ Activity', root_path, class: "btn myButton3" %>
+            <%= link_to 'Mail It', user_mailer_path(id: trip.id), class: "btn myButton3" %>
+            
+>>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
         </h7>
       </div>
       <div class="modal-body">

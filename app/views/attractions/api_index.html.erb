@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 <!-- <h1>Attractions </h1> -->
 
 <div class="panel panel-default">
+=======
+
+<div class="row">
+<div class="panel panel-default col-md-6">
+>>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
   <% if @api_results['places'] == [] %>
     <h7>Sorry, nothing found.  Please try another search.</h7>
     <%= link_to ' Home', root_path, class: "btn btn-danger" %>
@@ -10,6 +16,10 @@
   <div class="panel-heading">
     <h5><strong class="bold-cap"><%= place['city'] %> </strong>
     <%= activity['activity_type_name'] %>
+<<<<<<< HEAD
+=======
+    <%= link_to 'New Trip', new_trip_path(@trip), id: 'new-trip-ajax', remote: true, class: "add-trip" %>
+>>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
     <%= link_to 'Save To Trip', new_attraction_path(unique_id: activity['unique_id']), id: 'existing-trip-ajax', remote: true, class: "add-trip" %></h5> 
   </div>
   <div class="panel-body">
@@ -28,7 +38,9 @@
 <% end %>
   <div id='modal-div'>
   </div>
+  </div>
 
+<<<<<<< HEAD
   <div class="row">
     <%= link_to 'New Trip', new_trip_path(@trip), id: 'new-trip-ajax', remote: true, class: "btn myButton3" %>
     <div id="sidebar_builder" style='height: 450px; width: 450px; text-align: center;'></div>
@@ -39,6 +51,19 @@
   return ("<li><a>" + json.name + "</a></li>");
 };
 
+=======
+  <div class="col-md-6">
+    <div id="sidebar_builder" style='height: 450px; width: 450px; text-align: center;'></div>
+  </div> 
+</div> 
+  
+
+<script>
+  function createSidebarLi(json){
+  return ("<li><a>" + json.name + "</a></li>");
+};
+
+>>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
 function bindLiToMarker($li, marker){
   $li.on('click', function(){
     handler.getMap().setZoom(14);
@@ -73,5 +98,9 @@ handler.buildMap({ provider: mapOptions, internal: {id: 'sidebar_builder'}}, fun
 });
 </script>
 
+<<<<<<< HEAD
 </div>
+=======
+
+>>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
 

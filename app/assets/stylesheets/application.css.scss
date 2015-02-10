@@ -13,7 +13,10 @@
  *= require_tree .
  *= require_self
  */
+<<<<<<< HEAD
 $navbar_height: 120px;
+=======
+>>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -30,6 +33,7 @@ header {
   margin-top: 37px;
 }
 
+<<<<<<< HEAD
 // style position carousel
 // .carousel {
 // 	margin-top: 0px;
@@ -58,12 +62,33 @@ header {
 	height: 100%;
 	position: fixed;
 	top: 100px;
+=======
+.img-responsive {
+  width: 372px;
+  height: 72px;
 }
 
-.btn-sm {
-	margin-top: 200px;
-	margin-left: -61px;
+// style position carousel
+.carousel {
+  border: 2px double #f40;
+  widows: 100%; 
+  height: 364px;
 }
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+  width: 100%;
+  height: 360px;
+>>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
+}
+
+// .row {
+// 	margin-left: 710px;
+// 	margin-top: 60px;
+// 	width: 100%;
+// 	height: 100%;
+// 	position: fixed;
+// 	top: 100px;
+// }
 
 h1 {
 	margin-left: 290px;
@@ -86,12 +111,20 @@ h7 {
   font-size: 2.5em;
   letter-spacing: 1px;
 }
+<<<<<<< HEAD
 
+=======
+// positioning contact column
+>>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
 .col-md-3 {
   margin-top: 100px;
   margin-left: -212px;
 }
+<<<<<<< HEAD
 
+=======
+// positioning carousel
+>>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
 .col-md-6 {
   margin-top: 60px;
 }
@@ -101,7 +134,12 @@ h7 {
 	display: block;
 	margin-top: 50px;
 	margin-left: 30px;
+<<<<<<< HEAD
 	width:540px;
+=======
+  width: 540px;
+  max-width: 100%;
+>>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
   height: auto;
 	background: rgba(0, 20, 3, 0.6);
 	font-variant: none;
@@ -167,6 +205,12 @@ h7 {
     margin-right: 0;
   }
 }
+<<<<<<< HEAD
+=======
+@media (max-width: 800px) { .panel {
+  width: 80%;
+}}
+>>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
 
 // modal input color
 .r-name {
@@ -193,6 +237,24 @@ h7 {
 	margin-top: 250px;
 }
 
+.nav.navbar-nav.navbar-right.navlist {
+    background-color: #F93;
+    // border-radius: 50px;
+    margin-top: 11px;
+    top: 0;
+    a:visited {
+      color: #000;
+    }
+    a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+    li {
+        a {
+            color: #000;
+        }
+    }
+}
 .navbar {
     background: rgb(20,20,20);
     font-family: sans-serif, arial;
@@ -201,6 +263,7 @@ h7 {
     border-bottom: 2px double #F93;
 }
 
+<<<<<<< HEAD
 .navbar-nav {
   a:visited {
       color: #000;
@@ -210,6 +273,17 @@ h7 {
       text-decoration: none;
     }
 }
+=======
+// .navbar-nav {
+//   a:visited {
+//       color: #000;
+//     }
+//     a:hover {
+//       color: #fff;
+//       text-decoration: none;
+//     }
+// }
+>>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
 
 .content {
     margin-left: 0;
@@ -229,7 +303,6 @@ h7 {
 }
 
 body {
-  padding-top: 100px;
 	background: url("http://outdoorgearmadness.com/wp-content/uploads/2012/05/Trail-Running-Wallpaper-1280-x-800.jpg") no-repeat;
   background-attachment: fixed;
   background-size:cover;
