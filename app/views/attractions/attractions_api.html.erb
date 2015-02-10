@@ -1,5 +1,5 @@
-
-  <div class="panel panel-default">
+<div class="row">
+  <div class="panel panel-default col-md-6">
     <% @api_unique_id_results['places'].each do |place| %>
     <% place['activities'].each do |activity| %>
       <div class="panel-heading">
@@ -8,6 +8,7 @@
           <%= activity['activity_type_name'] %></h5>    
 =======
           <%= activity['activity_type_name'] %>
+          <%= link_to 'New Trip', new_trip_path(@trip), id: 'new-trip-ajax', remote: true, class: "add-trip" %>
           <%= link_to 'Save To Trip', new_attraction_path(unique_id: activity['unique_id']), id: 'existing-trip-ajax', remote: true, class: "add-trip" %></h5>    
 >>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
       </div> 
@@ -17,11 +18,7 @@
         <%= place['directions'] %>
       <li><h4>Description</h4></li>
         <%= activity['description'] %>
-      </div>
-      <div class="footer">
-        <%= link_to 'Create New Trip', new_trip_path(@trip), id: 'new-trip-ajax', remote: true, class: "btn btn-primary" %>
-        <%= link_to 'Add To Existing Trip', new_attraction_path(unique_id: activity['unique_id']), id: 'existing-trip-ajax', remote: true, class: "btn btn-primary" %>
-      </div>  
+      </div><br>
       <div id='reviews-div'>
         <h5 class="panel-footer"><strong class="bold-cap">REVIEWS </strong>
           <%= link_to 'New Review', new_review_path(unique_id: activity['unique_id']), id: 'new-review-ajax', remote: true, class: "add-trip" %></h5>
@@ -34,10 +31,10 @@
       </div>
   </div>
 
-  <div class="row">
+  <div class="col-md-6">
    <div id="loc_map" style='height: 450px; width: 450px; text-align: center;'></div>
   </div> 
-
+</div>
     <script type="text/javascript">
     function initialize() {
       var myCenter= new google.maps.LatLng(<%= place['lat'] %>, <%= place['lon'] %>);

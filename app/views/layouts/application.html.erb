@@ -20,16 +20,16 @@
 	</head>
 
 
-<% if notice %>
-  <p class="notice"><%= notice %></p>
-<% elsif alert %>       
-  <p class="alert"><%= alert %></p>
-<% end %>
 
-<body>   
-
-<%= render "layouts/navbar" %>
-<p><%= yield %></p> 
+<body> 
+  <%= render "layouts/navbar" %>  
+  <% if notice %>
+    <p class="notice"><%= notice %></p>
+  <% elsif alert %>       
+    <p class="alert"><%= alert %></p>
+  <% end %>
+  
+  <p><%= yield %></p> 
 
 </body>
 <%= render "layouts/footer" %> 

@@ -13,10 +13,6 @@
  *= require_tree .
  *= require_self
  */
-<<<<<<< HEAD
-$navbar_height: 120px;
-=======
->>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -33,36 +29,6 @@ header {
   margin-top: 37px;
 }
 
-<<<<<<< HEAD
-// style position carousel
-// .carousel {
-// 	margin-top: 0px;
-// 	margin-left: 30px;
-// 	width:540px;
-//   height:364px;
-//   border: 2px double #f40;
-// }
-
-// .carosel_image {   
-// 	display: block;
-// 	margin: 0;
-// 	width: 50%;
-// }
-
-// .carousel-inner > .item > img, .carousel-inner > .item > a > img {
-.carousel-inner {
-    width: 100%;
-    height: 360px;
-}
-
-.row {
-	margin-left: 710px;
-	margin-top: 60px;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	top: 100px;
-=======
 .img-responsive {
   width: 372px;
   height: 72px;
@@ -78,7 +44,6 @@ header {
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {
   width: 100%;
   height: 360px;
->>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
 }
 
 // .row {
@@ -111,20 +76,12 @@ h7 {
   font-size: 2.5em;
   letter-spacing: 1px;
 }
-<<<<<<< HEAD
-
-=======
 // positioning contact column
->>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
 .col-md-3 {
   margin-top: 100px;
   margin-left: -212px;
 }
-<<<<<<< HEAD
-
-=======
 // positioning carousel
->>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
 .col-md-6 {
   margin-top: 60px;
 }
@@ -134,12 +91,8 @@ h7 {
 	display: block;
 	margin-top: 50px;
 	margin-left: 30px;
-<<<<<<< HEAD
-	width:540px;
-=======
   width: 540px;
   max-width: 100%;
->>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
   height: auto;
 	background: rgba(0, 20, 3, 0.6);
 	font-variant: none;
@@ -205,12 +158,11 @@ h7 {
     margin-right: 0;
   }
 }
-<<<<<<< HEAD
-=======
-@media (max-width: 800px) { .panel {
-  width: 80%;
-}}
->>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
+@media (max-width: 800px) { 
+  .panel { 
+    width: 80%;
+  }
+}
 
 // modal input color
 .r-name {
@@ -263,17 +215,6 @@ h7 {
     border-bottom: 2px double #F93;
 }
 
-<<<<<<< HEAD
-.navbar-nav {
-  a:visited {
-      color: #000;
-    }
-    a:hover {
-      color: #fff;
-      text-decoration: none;
-    }
-}
-=======
 // .navbar-nav {
 //   a:visited {
 //       color: #000;
@@ -283,7 +224,6 @@ h7 {
 //       text-decoration: none;
 //     }
 // }
->>>>>>> d52feab7916d650bba0dc349b69d26e1aeb060da
 
 .content {
     margin-left: 0;
@@ -382,7 +322,7 @@ a {
 .menu ul {
   background:#F93;
   height:50px;
-  list-style:none;
+  list-style: none;
   margin-top:35px;
   margin-right:0;
   padding:0;
@@ -516,4 +456,3 @@ a {
   background: -o-linear-gradient(#fff, #999);
   text-align: justify;
 }
-
