@@ -14,8 +14,7 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require underscore
-//= require gmaps4rails.base
-//= require gmaps4rails.googlemaps
+//= require gmaps/google
 //= require_tree .
 
 
