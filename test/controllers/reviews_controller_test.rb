@@ -14,6 +14,8 @@ class ReviewsControllerTest < ActionController::TestCase
   # end
 
   test "should get new" do
+    @user = User.create!({:email => "yayaya@email.com", :password => "password", :password_confirmation => "password"})
+    sign_in @user
     get :new
     assert_response :success
   end

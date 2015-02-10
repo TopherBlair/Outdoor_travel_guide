@@ -1,9 +1,13 @@
 <%= form_for(@trip, remote: using_modal) do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-
-	<%= f.submit %>
-	<% if using_modal %>
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    <% end %>
+	<div class="m-body">
+    <ul>
+      <li class="r-name"><%= f.label :name %></li>
+        <%= f.text_field :name %>
+    </ul>  
+    <div class="btn btn-group-justified">
+      	<%= f.submit %>
+      	<% if using_modal %>
+            <button type="button" data-dismiss="modal">Close</button>
+          <% end %>
+    </div>
 <% end %>

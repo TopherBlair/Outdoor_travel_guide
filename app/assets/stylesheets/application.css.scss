@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-$navbar_height: 100px;
+$navbar_height: 120px;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -27,24 +27,26 @@ header {
 
 .jumbotron {
   background: rgba(0, 20, 3, 0.6);
+  margin-top: 37px;
 }
 
-.carousel {
-	margin-top: 0px;
-	margin-left: 30px;
-	width:540px;
-    height:360px;
-    padding: 5px;
-}
+// style position carousel
+// .carousel {
+// 	margin-top: 0px;
+// 	margin-left: 30px;
+// 	width:540px;
+//   height:364px;
+//   border: 2px double #f40;
+// }
 
-.carosel_image {
-    
-	display: block;
-	margin: 0 auto;
-	width: 50%;
-}
+// .carosel_image {   
+// 	display: block;
+// 	margin: 0;
+// 	width: 50%;
+// }
 
-.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+// .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+.carousel-inner {
     width: 100%;
     height: 360px;
 }
@@ -68,23 +70,43 @@ h1 {
 }
 
 h3 {
-    font-family: chalkduster, arial, sans-serif;
+  font-family: "Roboto Condensed", arial, sans-serif;
+  font-variant: small-caps; 
+  color: #ff7f00;
+  text-shadow: 2px 2px 6px #000;
+  font-size: 2.5em;
+  letter-spacing: 1px;
+}
+
+h7 {
+  font-family: "Roboto Condensed", arial, sans-serif;
+  text-transform: capitalize; 
+  color: #f40;
+  text-shadow: 2px 2px 6px #000;
+  font-size: 2.5em;
+  letter-spacing: 1px;
 }
 
 .col-md-3 {
-    margin-top: 100px;
-    margin-left: -212px;
+  margin-top: 100px;
+  margin-left: -212px;
 }
 
+.col-md-6 {
+  margin-top: 60px;
+}
+
+// design panel
 .panel {
 	display: block;
 	margin-top: 50px;
 	margin-left: 30px;
 	width:540px;
-    height: auto;
+  height: auto;
 	background: rgba(0, 20, 3, 0.6);
 	font-variant: none;
 	padding: 10px;
+  text-align: justify;
 	h1 {
 		background: transparent;
 	}
@@ -92,26 +114,79 @@ h3 {
 		color: white;
 	}
 	h4 {
-		color: lightblue;
+		color: #fff;
 		font-weight: bold;
+    font-family: "Roboto Condensed", arial, sans-serif;
 	}
 	h5 {
-		color: black;
-		font-size: 20px;
-		text-transform: uppercase;
+    color: #fff;
+    font-variant: small-caps;
+    letter-spacing: 2px;
+    font-family: "Roboto Condensed", arial, sans-serif;
 	}
-
+  h6 {
+    color:#09b0ff;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    font-family: "Roboto Condensed", arial, sans-serif;
+    font-size: 16px;
+  }
+  h7 {
+    color: #f40;
+    letter-spacing: 2px;
+    font-family: "Roboto Condensed";
+    font-size: 2.5em;
+    text-transform: capitalize;
+  }
+  .glyphicon {
+    color: #fdff60;
+  }
+  .bold-cap {
+    color: #f40;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
 	.footer {
 		text-align: right;
 	}
-
 	.panel-body {
 		color: grey;
 	}
 	.panel-heading {
 		background-color: rgb(20,20,20);
+    border-bottom: 1px double #f93;
+    border-right: 2px double #f93;
 	}
+  .panel-footer {
+    background-color: rgb(70,60,50);
+    margin-left: 70px;
+    height: 60px;
+    border: none;
+    border-bottom: 1px double #F40;
+    border-left: 2px double #F40;
+    margin-right: 0;
+  }
+}
 
+// modal input color
+.r-name {
+  color: #f93;
+  letter-spacing: 2px;
+  font-family: "Roboto Condensed";
+  font-size: 18px;
+}
+
+// change the attraction name looks
+.atr-name {
+  color: #f93;
+  letter-spacing: 1px;
+  font-family: 'Roboto Condensed', arial, sans-serif;
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+.add-trip {
+  text-align: right;
 }
 
 .main-body {
@@ -123,47 +198,52 @@ h3 {
     font-family: sans-serif, arial;
     max-width: 100%;
     top: 0px;
-    border: 0px;
+    border-bottom: 2px double #F93;
+}
+
+.navbar-nav {
+  a:visited {
+      color: #000;
+    }
+    a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
 }
 
 .content {
     margin-left: 0;
-
-}
-
-aside {
-	margin-top: 40px;
 }
 
 // style footer
-
-footer {
+.footer {
 	position: fixed;
-  float: left;
 	bottom: 0;
 	height: 39px;
 	color: #3c4a50;
   width: 100%;
-	background: rgb(20,20,20)
+	background: rgb(20,20,20);
+  font: 67.5% "Roboto Condensed";
+  font-size:14px;
+  border-top: 1px double #F93;
 }
 
-// style contact page
 body {
   padding-top: 100px;
 	background: url("http://outdoorgearmadness.com/wp-content/uploads/2012/05/Trail-Running-Wallpaper-1280-x-800.jpg") no-repeat;
   background-attachment: fixed;
-  background-size: 100%;
+  background-size:cover;
   height: 100%;
   display: table;
   width: 100%;
 }
 
+// style contact name
 .svg-wrapper {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-	  // margin: 85px auto;
-	  margin-top: 116px;
+	margin: 85px auto;
   width: 320px;  
 }
 .shape {
@@ -184,19 +264,18 @@ body {
   top: -48px;
   position: relative;
   max-width: 100%;
+  text-shadow: 2px 2px 6px #000;
 }
 .svg-wrapper:hover .shape {
   stroke-width: 2px;
   stroke-dashoffset: 0;
   stroke-dasharray: 760;
 }
-
-// 
+ 
 ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-
 }
 
 a {
@@ -204,117 +283,164 @@ a {
 	outline: none;
 }
 
-
 .logo {
 	padding-top: 5px;
 	padding-bottom: 5px;
 	padding-left: 20px;
 }
 
-.navbar-nav {
-	a:visited {
-	    color: #000;
+// styling nav menu dropdown
+.menu {
+  border:none;
+  border:0px;
+  margin:0px;
+  padding:0px;
+  font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+  font-size:14px;
+  font-weight:bold;
+  text-transform:  uppercase;
+  li:hover {
+    ul {
+      display:block; 
+    } 
+  }  
+}
+
+.menu ul {
+  background:#F93;
+  height:50px;
+  list-style:none;
+  margin-top:35px;
+  margin-right:0;
+  padding:0;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: inset 0px 14px 0px 0px rgba(255, 255, 255, .1);
+  -moz-box-shadow: inset 0px 14px 0px 0px rgba(255, 255, 255, .1);
+  box-shadow: inset 0px 14px 0px 0px rgba(255, 255, 255, .1);
+  li:hover {
+    a {
+      background:#C60;
+      color:#FFFFFF;
+      text-decoration:none;
     }
+  }
+}
+
+.menu li {
+  float:left;
+  padding:0px 0px 0px 0px;
+  a {
+    color:#000;
+    display:block;
+    font-weight:normal;
+    line-height:50px;
+    margin:0px;
+    padding:0px 25px;
+    text-align:center;
+    text-decoration:none;
+  }
+  a:hover {
+    background:#C60;
+    color:#FFFFFF;
+    text-decoration:none;
+    -webkit-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
+    -moz-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
+    box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
+  }
+  ul {
+    display:none;
+    height:auto;
+    padding:0px;
+    margin:0px;
+    border:0px;
+    position:absolute;
+    width:150px;
+    z-index:200;
+    a {
+      display:block;
+      height:50px;
+      font-size:12px;
+      font-style:normal;
+      margin:0px;
+      padding:0px 10px 0px 15px;
+      text-align:left;
+    }
+  /*this is where the rounded corners for the dropdown disappears*/
     a:hover {
-    	color: #fff;
-    	text-decoration: none;
+      border:0px;
+      color:#ffffff;
+      text-decoration:none;
+      background:#C60;
+      -webkit-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
+      -moz-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
+      box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
     }
-    text-transform:  uppercase;
-
+    li:hover {
+      a {
+        border:0px;
+        color:#ffffff;
+        text-decoration:none;
+        background:#C60;
+        -webkit-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
+        -moz-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
+        box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3); 
+      }
+    }
+  }
+  li {
+    display:block;
+    float:none;
+    margin:0px;
+    padding:0px;
+    width:160px;
+    background:#F93;
+  }
 }
 
-// styling nav menu
-.menu{
-border:none;
-border:0px;
-margin:0px;
-padding:0px;
-font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
-font-size:14px;
-font-weight:bold;
+.menu li:hover li a {
+  background:none;
 }
-.menu ul{
-background:#F93;
-// background: transparent;
-height:50px;
-list-style:none;
-margin:25px;
-padding:0;
--webkit-border-radius: 15px;
--moz-border-radius: 15px;
-border-radius: 15px;
--webkit-box-shadow: inset 0px 14px 0px 0px rgba(255, 255, 255, .1);
--moz-box-shadow: inset 0px 14px 0px 0px rgba(255, 255, 255, .1);
-box-shadow: inset 0px 14px 0px 0px rgba(255, 255, 255, .1);
+
+// styling modal
+.modal {
+  font-family: Arial, Helvetica, sans-serif;
+  height: auto;
+  background: rgba(0,3,4,0.4);
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  .modal-content {
+    border: 1px double #f93;
+    width: 80%;
+    margin: auto;
+    .modal-header {
+      background: rgb(20,20,20);
+      background: -moz-linear-gradient(#f93, #fff);
+      background: -webkit-linear-gradient(#f93, #fff);
+      background: -o-linear-gradient(#f93, #fff);
+    }
+  }
+  .modal-body {
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    .panel-body {
+      background: #fff;
+      background: -moz-linear-gradient(#fff, #999);
+      background: -webkit-linear-gradient(#fff, #999);
+      background: -o-linear-gradient(#fff, #999);
+    }
+  }
 }
-.menu li{
-float:left;
-padding:0px 0px 0px 0px; 
-}
-.menu li a{
-color:#000;
-display:block;
-font-weight:normal;
-line-height:50px;
-margin:0px;
-padding:0px 25px;
-text-align:center;
-text-decoration:none;
-}
-.menu li a:hover{
-background:#C60;
-color:#FFFFFF;
-text-decoration:none;
--webkit-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
--moz-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
-}
-.menu ul li:hover a{
-background:#C60;
-color:#FFFFFF;
-text-decoration:none;
-}
-.menu li ul{
-display:none;
-height:auto;
-padding:0px;
-margin:0px;
-border:0px;
-position:absolute;
-width:150px;
-z-index:200;
-}
-.menu li:hover ul{
-display:block; 
-}
-.menu li li {
-display:block;
-float:none;
-margin:0px;
-padding:0px;
-width:160px;
-background:#F93;
-/*this is where the rounded corners for the dropdown disappears*/
-}
-.menu li:hover li a{
-background:none;
-}
-.menu li ul a{
-display:block;
-height:50px;
-font-size:12px;
-font-style:normal;
-margin:0px;
-padding:0px 10px 0px 15px;
-text-align:left;
-}
-.menu li ul a:hover, .menu li ul li:hover a{
-border:0px;
-color:#ffffff;
-text-decoration:none;
-background:#C60;
--webkit-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
--moz-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3); 
+
+.m-body {
+  padding: 10px;
+  background: #fff;
+  background: -moz-linear-gradient(#fff, #999);
+  background: -webkit-linear-gradient(#fff, #999);
+  background: -o-linear-gradient(#fff, #999);
+  text-align: justify;
 }
 

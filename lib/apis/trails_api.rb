@@ -12,7 +12,6 @@ module Apis
       options['api_key'] = ENV['TRAILS_API_KEY']
   		self.headers 'Accept' => 'text/plain'
 		puts options
-    # binding.pry
   		self.get(TRAILS_API_URL, :query => options)
   	end
 
