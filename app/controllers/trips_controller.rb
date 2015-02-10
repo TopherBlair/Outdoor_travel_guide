@@ -4,7 +4,7 @@ class TripsController < ApplicationController
   respond_to :html, :js
 
   def index
-  	@trips = Trip.all
+  	@trips = current_user.trips
 	  respond_to do |format|
 	  	format.html
 	  	format.csv { render text: @trips.to_csv }
