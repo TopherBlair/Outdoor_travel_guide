@@ -59,13 +59,18 @@ h1 {
 	margin-left: 290px;
 }
 
-h3 {
+h4 {
   font-family: "Roboto Condensed", arial, sans-serif;
   font-variant: small-caps; 
   color: #ff7f00;
   text-shadow: 2px 2px 6px #000;
-  font-size: 2.5em;
+  font-size: 1.5em;
   letter-spacing: 1px;
+}
+
+p {
+	font-family: Tahoma, Geneva, sans-serif;
+	color: #B26200;
 }
 
 h7 {
@@ -82,9 +87,7 @@ h7 {
   margin-left: -212px;
 }
 // positioning carousel
-.col-md-6 {
-  margin-top: 60px;
-}
+
 
 // design panel
 .panel {
@@ -258,13 +261,14 @@ body {
   transform: translateY(-50%);
 	margin: 85px auto;
   width: 320px;  
+
 }
 .shape {
   stroke-dasharray: 140 540;
   stroke-dashoffset: -474;
   stroke-width: 8px;
   fill: transparent;
-  stroke: #19f6e8;
+  stroke: #B26200;
   border-bottom: 5px solid black;
   transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
 }
@@ -456,3 +460,26 @@ a {
   background: -o-linear-gradient(#fff, #999);
   text-align: justify;
 }
+
+.form-control {
+	width: 50%;
+}
+
+.picmarg {
+	margin-right: 25%;
+	margin-left: 25%;
+	text-align: center;
+}
+
+.picmarg img {
+	margin-bottom: 25%;
+}
+
+.helpfont {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 1.5em;
+}
+/*
+.svg-wrapper.nick {
+	margin-top: 20px;
+}*/
