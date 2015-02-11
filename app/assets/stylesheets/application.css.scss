@@ -79,13 +79,18 @@ h1 {
 	margin-left: 290px;
 }
 
-h3 {
+h4 {
   font-family: "Roboto Condensed", arial, sans-serif;
   font-variant: small-caps; 
   color: #ff7f00;
   text-shadow: 2px 2px 6px #000;
-  font-size: 2.5em;
+  font-size: 1.5em;
   letter-spacing: 1px;
+}
+
+p {
+	font-family: Tahoma, Geneva, sans-serif;
+	color: #B26200;
 }
 
 h7 {
@@ -97,8 +102,8 @@ h7 {
   letter-spacing: 1px;
 }
 // positioning contact column
-.col-md-4 {
-  margin-top: 154px;
+.col-md-4{
+  margin-top: 10%;
 }
 // positioning carousel
 .col-md-6 {
@@ -302,13 +307,14 @@ body {
   transform: translateY(-50%);
 	// margin: 85px auto;
   width: 320px;  
+
 }
 .shape {
   stroke-dasharray: 140 640;
   stroke-dashoffset: -614;
   stroke-width: 8px;
   fill: transparent;
-  stroke: #19f6e8;
+  stroke: #B26200;
   border-bottom: 5px solid black;
   transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
 }
@@ -328,8 +334,24 @@ body {
   stroke-dashoffset: 0;
   stroke-dasharray: 1100;
 }
- //************************
-ul {
+.picmarg {
+	text-align: center;
+}
+.picmarg img {
+	margin-bottom: 30%;
+}
+.helpfont {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 1.5em;
+}
+.introduction {
+	max-width: 95%;
+	text-align: justify;
+}
+.form-control {
+	width: 34%;
+}
+/*ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -351,7 +373,7 @@ a {
   transition: opacity 400ms ease-in;
   .modal-content {
     border: 1px double #f93;
-    width: 80%;
+    width: 100%;
     margin: auto;
     .modal-header {
       background: rgb(20,20,20);
@@ -380,4 +402,4 @@ a {
   background: -o-linear-gradient(#fff, #999);
   text-align: justify;
 }
-
+*/

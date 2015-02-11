@@ -35,7 +35,10 @@ class ReviewsController < ApplicationController
   
   def update
   	if @review.update_attributes(review_params)
-  		redirect_to attraction_api_path(activities_unique_id: @review.unique_id)
+  		respond_to do |format|
+        format.html { redirect_to attraction_api_path(activities_unique_id: @review.unique_id) }
+        format.js {render inline: "location.reload();" }
+      end
   	else
   		render :edit
   	end
