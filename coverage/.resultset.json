@@ -1,7 +1,7 @@
 {
   "MiniTest": {
     "coverage": {
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/models/user.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/models/user.rb": [
         1,
         1,
         1,
@@ -67,7 +67,7 @@
         null,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/controllers/application_controller.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/controllers/application_controller.rb": [
         1,
         1,
         null,
@@ -85,33 +85,33 @@
         1,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/helpers/application_helper.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/helpers/attractions_helper.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/helpers/attractions_helper.rb": [
         1,
         null,
         null,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/helpers/instagrams_helper.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/helpers/instagrams_helper.rb": [
         1,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/helpers/static_pages_helper.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/helpers/static_pages_helper.rb": [
         1,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/helpers/trips_helper.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/helpers/trips_helper.rb": [
         1,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/helpers/users_helper.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/controllers/attractions_controller.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/controllers/attractions_controller.rb": [
         1,
         1,
         1,
@@ -191,7 +191,7 @@
         null,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/controllers/instagrams_controller.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/controllers/instagrams_controller.rb": [
         1,
         1,
         0,
@@ -199,7 +199,7 @@
         null,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/controllers/omniauth_callbacks_controller.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/controllers/omniauth_callbacks_controller.rb": [
         1,
         1,
         3,
@@ -230,7 +230,7 @@
         null,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/controllers/registrations_controller.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/controllers/registrations_controller.rb": [
         1,
         null,
         1,
@@ -244,7 +244,7 @@
         null,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/controllers/reviews_controller.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/controllers/reviews_controller.rb": [
         1,
         1,
         1,
@@ -304,7 +304,7 @@
         null,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/controllers/static_pages_controller.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/controllers/static_pages_controller.rb": [
         1,
         1,
         null,
@@ -313,7 +313,7 @@
         null,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/controllers/trips_controller.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/controllers/trips_controller.rb": [
         1,
         1,
         1,
@@ -386,7 +386,7 @@
         null,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/controllers/users_controller.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -456,7 +456,7 @@
         null,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/mailers/user_mailer.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/mailers/user_mailer.rb": [
         1,
         1,
         null,
@@ -467,7 +467,7 @@
         null,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/models/attraction.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/models/attraction.rb": [
         1,
         1,
         null,
@@ -493,7 +493,7 @@
         null,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/models/identity.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/models/identity.rb": [
         1,
         1,
         1,
@@ -505,7 +505,7 @@
         null,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/models/review.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/models/review.rb": [
         1,
         1,
         1,
@@ -514,7 +514,7 @@
         null,
         null
       ],
-      "/Users/nickvo/Documents/Projects/Outdoor_travel_guide/app/models/trip.rb": [
+      "/Users/Kuddox/Documents/DEV/DPL/Outdoor_travel_guide/app/models/trip.rb": [
         1,
         1,
         1,

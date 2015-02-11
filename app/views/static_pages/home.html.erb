@@ -89,15 +89,20 @@
     </a>
   </div>
  </div> 
-  <div class="col-md-6">
-    <div class="btn-group">
-      <h3>Activity</h3>
-        <%= form_tag attractions_search_path do |f| %>
-        <%= select_tag "Attraction", options_for_select(["camping","mountain biking","hiking","snow sports","caving", "water sports"]), class: "form-control", name: 'activity_type' %>
-      <h3>Destination</h3>
-        <input type="text" class="form-control" name='city_location' style='width:200px;' placeholder="Which city?"><br>
-        <%= submit_tag 'Submit!', class: "btn myButton3" %>
-        <% end %>
-      </div> 
-  </div>
+
+	<div class="col-md-5">
+	   <p>Welcome to the Outdoor Travel Guide! Your main resource for everything outdoors! Log in with your Instagram account. Discover new and old trails, creating an amazing adventure. Plan a trip and e-mail the itinerary to your family and friends. Share your experiences by posting reviews and uploading pictures. ROUTE YOUR DESTINATION!</p>
+	 	 <p>Choose an activity, then select a city destination of your choice.</p>
+	  <h4>Activity</h4>
+	    <%= form_tag attractions_search_path do |f| %>
+	    <%= select_tag "Attraction", options_for_select(["camping","mountain biking","hiking","snow sports","caving", "water sports"]), class: "form-control", name: 'activity_type' %>
+	</div>
+	<div class="col-md-4">
+	  <h4>Destination</h4>
+	    <input type="text" class="form-control" name='city_location' style='width:200px;' placeholder="Which city?"><br>
+	    <%= submit_tag 'Submit!', class: "btn myButton3" %>
+	    <% end %>
+	</div> 
 </div>
+
+

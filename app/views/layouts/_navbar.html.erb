@@ -16,9 +16,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to " Home", root_path, class: "icon-home" %></li> 
-        <li><%= link_to " Contact", help_path, class: "icon-info-sign" %></li>
-        <li><%= link_to " My Trips", trips_path, class: "icon-user" %></li>
+        <li><%= link_to 'Home', root_path, class: "glyphicon glyphicon-globe navbar-text collapsed" %></li> 
+        <li><%= link_to 'Contact', help_path, class: "glyphicon glyphicon-leaf navbar-text collapsed" %></li>
+        <li><%= link_to 'MyTrips', trips_path, class: "glyphicon glyphicon-move navbar-text collapsed" %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
             <% if current_user %>
