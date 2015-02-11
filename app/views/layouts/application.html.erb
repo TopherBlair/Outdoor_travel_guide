@@ -19,8 +19,6 @@
       <script src='https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js?key=<%= ENV['GOOGLE_API_KEY']%>' type='text/javascript'></script>
 	</head>
 
-
-
 <body> 
   <%= render "layouts/navbar" %>  
   <% if notice %>
@@ -28,9 +26,9 @@
   <% elsif alert %>       
     <p class="alert"><%= alert %></p>
   <% end %>
-  
+
   <p><%= yield %></p> 
 
+  <%= render "layouts/footer" %> 
 </body>
-<%= render "layouts/footer" %> 
 </html>
