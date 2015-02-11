@@ -1,38 +1,42 @@
 
 <div class="row">
-<div class="panel panel-default col-md-6">
-  <% if @api_results['places'] == [] %>
-    <h7>Sorry, nothing found.  Please try another search.</h7>
-    <%= link_to ' Home', root_path, class: "btn btn-danger" %>
-  <% end %>  
-  <% @api_results['places'].each do |place| %>
-  <% place['activities'].each do |activity| %>
-  <div class="panel-heading">
-    <h5><strong class="bold-cap"><%= place['city'] %> </strong>
-    <%= activity['activity_type_name'] %>
-    <%= link_to 'New Trip', new_trip_path(@trip), id: 'new-trip-ajax', remote: true, class: "add-trip" %>
-    <%= link_to 'Save To Trip', new_attraction_path(unique_id: activity['unique_id']), id: 'existing-trip-ajax', remote: true, class: "add-trip" %></h5> 
-  </div>
-  <div class="panel-body">
-    <ol><%= link_to place['name'], attraction_api_path(activities_unique_id: activity['unique_id']), class: "atr-name" %></ol> 
-    <h6>Average Rating:
-      <% Review.where(unique_id: activity['unique_id']).average('rating').to_i.times do %>
-        <span class="glyphicon glyphicon-star"></span>
-      <% end %> 
-      - <%= Review.where(unique_id: activity['unique_id']).count %> reviews</h6>
-    <li><h4>Directions</h4></li>
-    <%= place['directions'] %>
-    <li><h4>Description</h4></li>
-    <%= activity['description'].html_safe.strip %>
-  </div>
-  <% end %>
-<% end %>
-  <div id='modal-div'>
-  </div>
-  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <% if @api_results['places'] == [] %>
+        <h7>Sorry, nothing found.  Please try another search.</h7>
+        <%= link_to ' Home', root_path, class: "btn btn-danger" %>
+      <% end %>  
+      <% @api_results['places'].each do |place| %>
+      <% place['activities'].each do |activity| %>
+      <div class="panel-heading">
+        <h5><strong class="bold-cap"><%= place['city'] %> </strong>
+        <%= activity['activity_type_name'] %>
+        <%= link_to 'New Trip', new_trip_path(@trip), id: 'new-trip-ajax', remote: true, class: "add-trip" %>
+        <%= link_to 'Save To Trip', new_attraction_path(unique_id: activity['unique_id']), id: 'existing-trip-ajax', remote: true, class: "add-trip" %></h5> 
+      </div>
+      <div class="panel-body">
+        <ol><%= link_to place['name'], attraction_api_path(activities_unique_id: activity['unique_id']), class: "atr-name" %></ol> 
+        <h6>Average Rating:
+          <% Review.where(unique_id: activity['unique_id']).average('rating').to_i.times do %>
+            <span class="glyphicon glyphicon-star"></span>
+          <% end %> 
+          - <%= Review.where(unique_id: activity['unique_id']).count %> reviews</h6>
+        <li><h4>Directions</h4></li>
+        <%= place['directions'] %>
+        <li><h4>Description</h4></li>
+        <%= activity['description'].html_safe.strip %>
+      </div>
+      <% end %>
+    <% end %>
+      <div id='modal-div'>
+      </div>
+    </div>
+  </div> 
 
   <div class="col-md-6">
-    <div id="sidebar_builder" style='height: 450px; width: 650px; text-align: center;'></div>
+    <div class="gmap">
+      <div id="sidebar_builder" style='height: 398px; width: 398px; text-align: center;'></div>
+    </div> 
   </div> 
 </div> 
   

@@ -1,36 +1,41 @@
 <div class="row">
-  <div class="panel panel-default col-md-6">
-    <% @api_unique_id_results['places'].each do |place| %>
-    <% place['activities'].each do |activity| %>
-      <div class="panel-heading">
-        <h5><strong class="bold-cap"><%= place['city'] %> </strong>
-          <%= activity['activity_type_name'] %>
-          <%= link_to 'New Trip', new_trip_path(@trip), id: 'new-trip-ajax', remote: true, class: "add-trip" %>
-          <%= link_to 'Save To Trip', new_attraction_path(unique_id: activity['unique_id']), id: 'existing-trip-ajax', remote: true, class: "add-trip" %></h5>    
-      </div> 
-      <div class="panel-body">
-        <ol class="atr-name"><%= place['name'] %></ol>
-      <li><h4>Directions</h4></li>
-        <%= place['directions'] %>
-      <li><h4>Description</h4></li>
-        <%= activity['description'] %>
-      </div><br>
-      <div id='reviews-div'>
-        <h5 class="panel-footer"><strong class="bold-cap">REVIEWS </strong>
-          <%= link_to 'New Review', new_review_path(unique_id: activity['unique_id']), id: 'new-review-ajax', remote: true, class: "add-trip" %></h5>
-        <% @reviews.each do |review| %>
-          <%= render 'reviews/review', review: review, activity: activity %>
-        <% end %>
-      </div>
-    <% end %>
-      <div id='modal-div'>
-      </div>
-  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <% @api_unique_id_results['places'].each do |place| %>
+      <% place['activities'].each do |activity| %>
+        <div class="panel-heading">
+          <h5><strong class="bold-cap"><%= place['city'] %> </strong>
+            <%= activity['activity_type_name'] %>
+            <%= link_to 'New Trip', new_trip_path(@trip), id: 'new-trip-ajax', remote: true, class: "add-trip" %>
+            <%= link_to 'Save To Trip', new_attraction_path(unique_id: activity['unique_id']), id: 'existing-trip-ajax', remote: true, class: "add-trip" %></h5>    
+        </div> 
+        <div class="panel-body">
+          <ol class="atr-name"><%= place['name'] %></ol>
+        <li><h4>Directions</h4></li>
+          <%= place['directions'] %>
+        <li><h4>Description</h4></li>
+          <%= activity['description'] %>
+        </div><br>
+        <div id='reviews-div'>
+          <h5 class="panel-footer"><strong class="bold-cap">REVIEWS </strong>
+            <%= link_to 'New Review', new_review_path(unique_id: activity['unique_id']), id: 'new-review-ajax', remote: true, class: "add-trip" %></h5>
+          <% @reviews.each do |review| %>
+            <%= render 'reviews/review', review: review, activity: activity %>
+          <% end %>
+        </div>
+      <% end %>
+        <div id='modal-div'>
+        </div>
+    </div>
+  </div> 
 
-  <div class="col-md-6 map">
-   <div id="loc_map" style='height: 450px; width: 650px; text-align: center;'></div>
+  <div class="col-md-6">
+    <div class="gmap">
+      <div id="loc_map" style='height: 398px; width: 398px; text-align: center;'></div>
+    </div> 
   </div> 
 </div>
+
     <script type="text/javascript">
     function initialize() {
       var myCenter= new google.maps.LatLng(<%= place['lat'] %>, <%= place['lon'] %>);
