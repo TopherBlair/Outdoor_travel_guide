@@ -24,9 +24,29 @@ header {
   position: static;
 }
 
+.flash-alert {
+ padding:  .91324200913242%;
+ margin-top: 40px;
+ border: 1px solid #750202 ;
+ color: #750202 ;
+ font-size: 18px;
+ background-color: #fcadad ;
+ font-weight: bold;
+}
+
+.flash-notice {
+ padding:  .91324200913242%;
+ margin-top: 40px;
+ border: 1px solid #017505 ;
+ color: #017505 ;
+ font-size: 18px;
+ background-color: #b5ffb2 ;
+ font-weight: bold;
+}
+
 .jumbotron {
   background: rgba(0, 20, 3, 0.6);
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 .img-responsive {
@@ -82,7 +102,7 @@ h7 {
 }
 // positioning carousel
 .col-md-6 {
-  margin-top: 150px;
+  margin-top: 80px;
 }
 
 .col-md-12 {
@@ -99,7 +119,7 @@ h7 {
 .panel {
 	display: block;
   margin-left: 10px;
-  width: auto;
+  width: 640px;
   max-width: 100%;
   height: auto;
 	background: rgba(0, 20, 3, 0.6);
@@ -198,23 +218,48 @@ h7 {
 }
 
 .nav.navbar-nav.navbar-right.navlist {
-    background-color: #F93;
-    // border-radius: 50px;
-    margin-top: 11px;
-    top: 0;
-    a:visited {
+  background-color: #F93;
+  margin-top: 11px;
+  top: 0;
+  text-transform:  uppercase;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: inset 0px 14px 0px 0px rgba(255, 255, 255, .1);
+  -moz-box-shadow: inset 0px 14px 0px 0px rgba(255, 255, 255, .1);
+  box-shadow: inset 0px 14px 0px 0px rgba(255, 255, 255, .1);
+  font: 80.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+  .glyphicon {
+    margin-top: -1px;
+  }
+  a:visited {
+    color: #000;
+  }
+  a:hover {
+    color: #fff;
+    text-decoration: none;
+    -webkit-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
+    -moz-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
+    box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
+  }
+  li {
+    a {
       color: #000;
+      background: none;
     }
-    a:hover {
-      color: #fff;
-      text-decoration: none;
+  }
+  li:hover {
+    a {
+      background:#C60;
+      color:#FFFFFF;
+      text-decoration:none;
     }
-    li {
-        a {
-            color: #000;
-        }
-    }
+  }
+  ul {
+    background: #f93;
+  }
 }
+
 .navbar {
     background: rgb(20,20,20);
     font-family: sans-serif, arial;
@@ -222,16 +267,6 @@ h7 {
     top: 0px;
     border-bottom: 2px double #F93;
 }
-
-// .navbar-nav {
-//   a:visited {
-//       color: #000;
-//     }
-//     a:hover {
-//       color: #fff;
-//       text-decoration: none;
-//     }
-// }
 
 .content {
     margin-left: 0;
@@ -257,6 +292,7 @@ body {
   height: 100%;
   display: table;
   width: 100%;
+  padding-top: 70px;
 }
 
 // style contact name
