@@ -26,7 +26,7 @@ header {
 
 .jumbotron {
   background: rgba(0, 20, 3, 0.6);
-  margin-top: 37px;
+  margin-top: 100px;
 }
 
 .img-responsive {
@@ -77,21 +77,29 @@ h7 {
   letter-spacing: 1px;
 }
 // positioning contact column
-.col-md-3 {
-  margin-top: 100px;
-  margin-left: -212px;
+.col-md-4 {
+  margin-top: 154px;
 }
 // positioning carousel
 .col-md-6 {
-  margin-top: 60px;
+  margin-top: 150px;
+}
+
+.col-md-12 {
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+.gmap {
+  border: 1px double #f40;
+  width: 400px;
 }
 
 // design panel
 .panel {
 	display: block;
-	margin-top: 50px;
-	margin-left: 30px;
-  width: 540px;
+  margin-left: 10px;
+  width: auto;
   max-width: 100%;
   height: auto;
 	background: rgba(0, 20, 3, 0.6);
@@ -160,7 +168,7 @@ h7 {
 }
 @media (max-width: 800px) { 
   .panel { 
-    width: 80%;
+    width: 95%;
   }
 }
 
@@ -256,12 +264,12 @@ body {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-	margin: 85px auto;
+	// margin: 85px auto;
   width: 320px;  
 }
 .shape {
-  stroke-dasharray: 140 540;
-  stroke-dashoffset: -474;
+  stroke-dasharray: 140 640;
+  stroke-dashoffset: -614;
   stroke-width: 8px;
   fill: transparent;
   stroke: #19f6e8;
@@ -282,9 +290,9 @@ body {
 .svg-wrapper:hover .shape {
   stroke-width: 2px;
   stroke-dashoffset: 0;
-  stroke-dasharray: 760;
+  stroke-dasharray: 1100;
 }
- 
+ //************************
 ul {
 	list-style-type: none;
 	margin: 0;
@@ -294,126 +302,6 @@ ul {
 a {
 	display: block;
 	outline: none;
-}
-
-.logo {
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 20px;
-}
-
-// styling nav menu dropdown
-.menu {
-  border:none;
-  border:0px;
-  margin:0px;
-  padding:0px;
-  font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
-  font-size:14px;
-  font-weight:bold;
-  text-transform:  uppercase;
-  li:hover {
-    ul {
-      display:block; 
-    } 
-  }  
-}
-
-.menu ul {
-  background:#F93;
-  height:50px;
-  list-style: none;
-  margin-top:35px;
-  margin-right:0;
-  padding:0;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  border-radius: 15px;
-  -webkit-box-shadow: inset 0px 14px 0px 0px rgba(255, 255, 255, .1);
-  -moz-box-shadow: inset 0px 14px 0px 0px rgba(255, 255, 255, .1);
-  box-shadow: inset 0px 14px 0px 0px rgba(255, 255, 255, .1);
-  li:hover {
-    a {
-      background:#C60;
-      color:#FFFFFF;
-      text-decoration:none;
-    }
-  }
-}
-
-.menu li {
-  float:left;
-  padding:0px 0px 0px 0px;
-  a {
-    color:#000;
-    display:block;
-    font-weight:normal;
-    line-height:50px;
-    margin:0px;
-    padding:0px 25px;
-    text-align:center;
-    text-decoration:none;
-  }
-  a:hover {
-    background:#C60;
-    color:#FFFFFF;
-    text-decoration:none;
-    -webkit-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
-    -moz-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
-    box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
-  }
-  ul {
-    display:none;
-    height:auto;
-    padding:0px;
-    margin:0px;
-    border:0px;
-    position:absolute;
-    width:150px;
-    z-index:200;
-    a {
-      display:block;
-      height:50px;
-      font-size:12px;
-      font-style:normal;
-      margin:0px;
-      padding:0px 10px 0px 15px;
-      text-align:left;
-    }
-  /*this is where the rounded corners for the dropdown disappears*/
-    a:hover {
-      border:0px;
-      color:#ffffff;
-      text-decoration:none;
-      background:#C60;
-      -webkit-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
-      -moz-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
-      box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
-    }
-    li:hover {
-      a {
-        border:0px;
-        color:#ffffff;
-        text-decoration:none;
-        background:#C60;
-        -webkit-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
-        -moz-box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3);
-        box-shadow: inset 0px 0px 7px 2px rgba(0, 0, 0, .3); 
-      }
-    }
-  }
-  li {
-    display:block;
-    float:none;
-    margin:0px;
-    padding:0px;
-    width:160px;
-    background:#F93;
-  }
-}
-
-.menu li:hover li a {
-  background:none;
 }
 
 // styling modal
@@ -427,7 +315,7 @@ a {
   transition: opacity 400ms ease-in;
   .modal-content {
     border: 1px double #f93;
-    width: 80%;
+    width: 100%;
     margin: auto;
     .modal-header {
       background: rgb(20,20,20);
