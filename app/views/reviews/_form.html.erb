@@ -1,7 +1,7 @@
 <%= form_for(@review, remote: using_modal, :authenticity_token => true) do |f| %>
   <div class="m-body">
     <ul>
-  	  <li class="r-name"><%= f.label :name, 'Place' %></li>
+  	  <li class="r-name"><%= f.label :name, 'Title' %></li>
   	  <%= f.text_field :name %><br>
   	  <i><%= f.label :rating %>
   	  <%= f.select :rating, ["1 star", "2 stars", "3 stars", "4 stars", "5 stars"] %></i>
@@ -9,6 +9,7 @@
   	  <li class="r-name"><%= f.label :body, 'Input' %></li> 
   	  <%= f.text_area :body %>
 
+      <li class="r-name"><%= f.label :photo, "Photo" %></i>
       <i><%= f.file_field :photo %></i>
     </ul>
   	<%= f.hidden_field :unique_id, value: params[:unique_id] %>
