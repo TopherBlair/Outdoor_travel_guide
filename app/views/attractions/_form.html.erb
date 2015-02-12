@@ -3,7 +3,7 @@
   <ul class="formList">
     <li class="r-name"><%= f.label :name, 'Trip Name' %></li> 
       <%= f.select :trip_id, options_from_collection_for_select(current_user.trips, :id, :name) %>
-    <li class="r-name"><%= f.hidden_field :unique_id, value: params[:unique_id] %></li>
+      <%= f.hidden_field :unique_id, value: params[:unique_id] %>
     <li class="btn btn-group-justified">
        <%= f.submit ("Add To Trip")%>
        <% if using_modal %>

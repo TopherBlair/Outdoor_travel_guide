@@ -5,13 +5,13 @@
 <br>
    <%= image_tag review.photo.url, size: "300x200" %>
 <br>
-<h5><%= review.body %></h5>
-  
-  <% if current_user.id == review.user_id %>
+<h5><%= review.body %></h5> 
+  <% if current_user && current_user.id == review.user_id %>
 	  <p><%= link_to 'Edit', edit_review_path(id: review, unique_id: activity['unique_id']), id: 'edit-review-ajax', remote: true, class: "btn myButton2" %>
 	     <%= link_to 'Delete', review, method: :delete, data: { confirm: 'Delete¿' }, class: "btn myButton2" %></p>
- 
-      <div id='modal-div'>
-      </div>
-<% end %>
+  <% end %>	
+
+<div id='modal-div'>
+</div>
+
 
