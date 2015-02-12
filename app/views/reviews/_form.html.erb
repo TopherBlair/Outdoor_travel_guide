@@ -8,9 +8,9 @@
 
   	  <li class="r-name"><%= f.label :body, 'Input' %></li> 
   	  <%= f.text_area :body %>
-
-      <li class="r-name"><%= f.label :photo, "Photo" %></i>
-      <i><%= f.file_field :photo %></i>
+      <br>
+      <i><%= f.label :photo %>
+      <%= f.file_field :photo %></i>
     </ul>
   	<%= f.hidden_field :unique_id, value: params[:unique_id] %>
     <div class="btn btn-group-justified">
